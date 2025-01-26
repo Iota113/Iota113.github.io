@@ -1,0 +1,88 @@
+@font-face{
+    font-family: genshinFont;
+    src:"zh-cn.ttf";
+}
+
+body{
+    color:white;
+    font-family: genshinFont;
+    margin-left: 1.2%;
+    background-image: url("../images/Asakusa Night.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+}
+
+nav{
+    margin-left:.3rem;
+}
+
+.button1{
+    width: 15rem;
+    padding: .75rem 1.25rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    background-color:rgb(255, 13, 131);
+    border: none;
+    text-align: center;
+    font-size:3.0vh;
+    font-weight: bold;
+    font-family: genshinFont;
+    color:white;
+    border-radius: 10rem;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+    &:hover{
+        color:rgb(255, 13, 131);
+        background-color: white;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.accordion{
+    --bs-accordion-btn-bg: white;
+    --bs-accordion-active-color:red;
+    width: 50%;
+    margin-top:1.2rem;
+    margin-left: 1.2%;
+}
+
+.gallery {
+    margin: 2% 5% 5% 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    gap: 6px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+img.four-grid-cells {
+    grid-row: span 2 / auto;
+    grid-column: span 2 / auto;
+}
+
+img.wide-image {
+    grid-column: span 2 / auto;
+}
+
+img.tall-image{
+    grid-row: span 2 / auto;
+}
+
+
