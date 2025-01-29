@@ -1,0 +1,118 @@
+/* https://github.com/treehouse/ham-menu */
+
+.off-screen-menu {
+    background-color:  rgb(254, 254, 245);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    left: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: left;
+    font-size: 3rem;
+    transition: .3s ease;
+    z-index: 900;
+}
+.off-screen-menu.active {
+    left: 0;
+}
+
+
+
+/* nav */
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: rgb(236, 236, 244);
+    position: fixed;  /* Fixes nav at the top */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Makes nav span the full width */
+    height: 70px;
+    margin-left: 0%;
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+
+/* ham menu */
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    position: fixed; /* Keeps it in place while scrolling */
+    top: 10px;  /* Distance from the top */
+    left: 10px; /* Adjust as needed */
+}
+
+
+.ham-menu:hover {
+    cursor: pointer;
+}
+
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(230, 109, 11);
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: rgb(230, 109, 11);
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    display: none; /* Hide dropdown menu initially */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position the dropdown to the right */
+    background-color: #fdf6f6;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    visibility: hidden; /* Hide the dropdown element */
+    transform: translateY(-10px); /* Start slightly above the trigger */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s; /* Add transition */
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make it visible */
+    transform: translateY(0); /* Move the dropdown to its normal position */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}

@@ -6,11 +6,11 @@
 body{
     color:white;
     font-family: genshinFont;
-    margin-left: 1.2%;
     background-image: url("../images/Japan/Asakusa Night.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
+    margin-top: 70px;
 }
 
 nav{
@@ -18,12 +18,8 @@ nav{
 }
 
 .accordion{
-    --bs-accordion-btn-bg: rgb(5, 75, 239);
-    /* --bs-accordion-active-bg: rgba(230, 33, 252, 0.945); */
-    --bs-accordion-btn-color:rgb(255,255,255);
-    /* --bs-accordion-active-color:rgb(132, 148, 165); */
-    /* --bs-accordion-btn-icon: escape-svg(rgb(226, 46, 10));
-    --bs-accordion-btn-active-icon: escape-svg(rgb(14, 234, 43)); */
+    --bs-accordion-btn-color:black;
+    --bs-accordion-btn-bg: white;
     border: none;
     width: 50%;
     margin-top:1.2rem;
@@ -57,26 +53,12 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2%;
 }
 
 img.frame{
     border-radius: 0%;
-    border:thick double white;
+    border:solid white;
 }
-
-/* img.four-grid-cells {
-    grid-row: span 2 / auto;
-    grid-column: span 2 / auto;
-}
-
-img.wide-image {
-    grid-column: span 2 / auto;
-}
-
-img.tall-image{
-    grid-row: span 2 / auto;
-} */
 
 [class*="button-"]{
     width: 40%;
@@ -103,10 +85,10 @@ img.tall-image{
 
 /* For mobile phones: */
 [class*="col-"] {
-    font-size: 30px;
-    width: 92%;
-    margin-right: 4%;
-    margin-left: 4%;
+    font-size: 20px;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -121,7 +103,7 @@ img.tall-image{
     .col-s-8 {width: 66.66%;}
     .col-s-9 {width: 75%;}
     .col-s-10 {width: 83.33%;}
-    .col-s-11 {width: 91.66%; font-size: 40px;}
+    .col-s-11 {width: 91.66%; font-size: 40px; margin-left: 4.17%; margin-right: 4.17%;}
     .col-s-12 {width: 100%;}
 }
   
@@ -138,12 +120,40 @@ img.tall-image{
     .col-9 {width: 75%; font-size: 3vh; margin-left: 12.5%; margin-right: 12.5%}
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%; font-size: 3vh; margin-left: 4.17%; margin-right: 4.17%;}
-    .col-12 {width: 100%;}
+    .col-12 {width: 100%; margin-left: 0%; margin-right: 0%;}
 
     .button-1{
         margin-right: 2%;
-        width: 15%;
+        width: 10%;
+    }
+
+    .parallaxA {
+        background-attachment: fixed;
     }
 }
+
+.parallax {
+	background: url('../images/Japan/Fushimi\ Inari\ Taisha.jpeg') repeat fixed 100%;
+    background-position: center;
+    background-size:cover;
+	text-align: center;
+    margin-left: none;
+    margin-right: none;
+}
+
+.parallaxA {
+	background: url('../images/Japan/Asakusa\ Night.jpg') repeat fixed 100%;
+    background-position: center;
+    background-size:cover;
+	text-align: center;
+    margin-left: none;
+    margin-right: none;
+}
+
+.parallax-inner {
+	padding-top: 5%;
+	padding-bottom: 10%;
+}
+
 
 
