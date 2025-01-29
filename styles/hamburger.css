@@ -85,34 +85,50 @@ nav {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Dropdown styles */
-.dropdown {
-    position: relative;
-    z-index: 1000;
+/* Ensure dropdown menu li items are sized properly */
+.off-screen-menu .dropdown-menu li a {
+    margin-left: 4px;
+    padding: 8px 15px; /* Adjust padding to match text size */
+    font-size: 20px; /* Set the font size for dropdown items */
+    color: rgb(221, 91, 5); /* Optional: Adjust text color for better contrast */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
+/* Global link and button styles to ensure consistency */
+.off-screen-menu a,
+.off-screen-menu .dropdown-toggle {
+    font-size: 40px; /* Larger text size for the menu items */
+    font-family: inherit;
+    color: #e0ae09;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* Ensure dropdown menu background and positioning */
 .dropdown-menu {
-    display: none; /* Hide dropdown menu initially */
+    display: none;
     position: absolute;
-    top: 0;
-    left: 100%; /* Position the dropdown to the right */
+    top: 50%;
+    left: 100%; /* Dropdown on the right */
     background-color: #fdf6f6;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    visibility: hidden; /* Hide the dropdown element */
-    transform: translateY(-10px); /* Start slightly above the trigger */
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s; /* Add transition */
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s;
 }
 
-.dropdown-menu li {
-    padding: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown on hover */
-    opacity: 1; /* Fade in */
-    visibility: visible; /* Make it visible */
-    transform: translateY(0); /* Move the dropdown to its normal position */
+/* Adjust dropdown to show when active */
+.dropdown.active .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }

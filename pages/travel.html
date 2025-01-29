@@ -14,59 +14,35 @@
 
 <body style="background-image: none;">
 
-    <!-- <ul class="nav nav-tabs" style="margin-top: 2%;">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html" style="color:black;">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="math.html" style="color:black">Math</a>
-          </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="media.html" role="button" aria-expanded="false"
-            style="color:black">Media</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="media.html">2024-2025</a></li>
-            <li><a class="dropdown-item" href="media2.html">2022-2023</a></li>
-            <li><a class="dropdown-item" href="mediaBooks.html">Books</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="travel.html" role="button" aria-expanded="false">Travel</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="travel.html">2024-2025</a></li>
-            <li><a class="dropdown-item" href="travel2.html">2023-2024</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="cooking.html" style="color:black">Cooking</a>
-          </li>
-    </ul> -->
+  <div class="off-screen-menu">
+    <ul style="list-style-type:none;">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="math.html">Math</a></li>
 
-    <div class="off-screen-menu">
-      <ul style="list-style-type:none;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="math.html">Math</a></li>
+        <!-- First Dropdown: Media -->
         <li class="dropdown">
-          <a href="media.html">Media</a>
-          <!-- Dropdown Menu -->
-          <ul class="dropdown-menu">
-              <li><a href="media.html">2024-2025</a></li>
-              <li><a href="media2.html">2022-2023</a></li>
-              <li><a href="mediaBooks.html">Books</a></li>
-          </ul>
+            <button class="dropdown-toggle">Media</button> <!-- Changed from <a> to <button> -->
+            <ul class="dropdown-menu">
+                <li><a href="media.html">2024-2025</a></li>
+                <li><a href="media2.html">2022-2023</a></li>
+                <li><a href="mediaBooks.html">Books</a></li>
+            </ul>
         </li>
-        <li class="dropdown">
-          <a href="travel.html">Travel</a>
-          <!-- Dropdown Menu -->
-          <ul class="dropdown-menu">
-              <li><a href="travel.html">2024-2025</a></li>
-              <li><a href="travel2.html">2022-2023</a></li>
-          </ul>
-        </li>
-        <li><a href="cooking.html">Cooking</a></li>
-      </ul>
-    </div>
 
+      <!-- Second Dropdown: Travel -->
+      <li class="dropdown">
+        <button class="dropdown-toggle">Travel</button> <!-- Changed from <a> to <button> -->
+        <ul class="dropdown-menu">
+            <li><a href="travel.html">2024-2025</a></li>
+            <li><a href="travel2.html">2022-2023</a></li>
+        </ul>
+    </li>
+
+      <li><a href="cooking.html">Cooking</a></li>
+    </ul>
+
+  </div>
+  
     <nav>
       <div class="ham-menu">
         <span></span>
