@@ -4,9 +4,9 @@
 #video-container {
     max-width: 800px;
     margin: 0 auto 20px;
-    background: #000;
-    border-radius: 10px;
+    background: white;
     overflow: hidden;
+    display: none;
 }
 
 #yt-player {
@@ -25,7 +25,6 @@
 
 .song {
     background: #fff;
-    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -79,5 +78,41 @@
     font-size: 12px;
     }
 }
+
+#current-video-title-container {
+    background-color: #1e1e1e; /* Dark background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Initially invisible */
+    animation: fadeInTitle 1s forwards; /* Fade-in animation */
+  }
+  
+  #current-video-title {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  @keyframes fadeInTitle {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 
 

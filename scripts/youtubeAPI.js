@@ -1,23 +1,64 @@
 let player;
 
-  // Load the YouTube IFrame API
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("yt-player", {
-      height: "450",
-      width: "100%",
-      videoId: "dQw4w9WgXcQ", // Default video
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  }
-
-function onPlayerReady(event) {
-  const songs = document.querySelectorAll(".song");
-  songs.forEach((song) => {
-    song.addEventListener("click", () => {
-      const videoId = song.getAttribute("data-video-id");
-      player.loadVideoById(videoId);
-    });
+// Load the YouTube IFrame API
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("yt-player", {
+    height: "450",
+    width: "100%",
+    videoId: "nC3Dd3eqZy8", // Default video
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange, // Listen for state changes
+    },
   });
 }
+
+function onPlayerReady(event) {
+  // Autoplay the video when the player is ready
+  event.target.playVideo();
+  updateVideoTitle();
+}
+
+function onPlayerStateChange(event) {
+  // If video ends or starts playing, update the title
+  if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.ENDED) {
+    updateVideoTitle();
+  }
+}
+
+function updateVideoTitle() {
+  const videoData = player.getVideoData();
+  const currentVideoId = videoData.video_id; // Get the video ID of the currently playing video
+
+  // Find the song element that corresponds to the current video
+  const songElement = document.querySelector(`[data-video-id="${currentVideoId}"]`);
+  const customTitle = songElement ? songElement.getAttribute("data-custom-title") : "Unknown Song"; // Fallback if no custom title is found
+
+  // Display the custom title in the HTML element
+  const titleElement = document.getElementById("current-video-title");
+  const containerElement = document.getElementById("current-video-title-container");
+
+  // Add animation class (fading effect)
+  containerElement.style.animation = 'none';  // Reset animation
+  containerElement.offsetHeight; // Trigger reflow to reset animation
+  containerElement.style.animation = 'fadeInTitle 1s forwards';  // Apply animation again
+
+  titleElement.textContent = `Currently Playing: ${customTitle}`;
+}
+
+const songs = document.querySelectorAll(".song");
+songs.forEach((song) => {
+  song.addEventListener("click", () => {
+    const videoId = song.getAttribute("data-video-id");
+    const startTime = song.getAttribute("data-start-time") || 0;  // Default to 0 if no start time is provided
+
+    // Load the video by ID and start at the specified time
+    player.loadVideoById({
+      videoId: videoId,
+      startSeconds: parseInt(startTime),  // Pass the start time to the player
+    });
+
+    // Update the title with the custom title whenever a new video is played
+    updateVideoTitle();
+  });
+});
