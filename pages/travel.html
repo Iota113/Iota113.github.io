@@ -16,13 +16,26 @@
 <body>
 
   <div class="off-screen-menu">
-    <ul style="list-style-type:none;">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="math.html">Math</a></li>
+
+    <ul style="list-style-type:none; padding: 0;">
+
+        <li>
+            <a href="index.html">
+                <img src="../icons/info.png" class="icon"> Home
+            </a>
+        </li>
+        <li>
+            <a href="math.html">
+                <img src="../icons/calculus.png" class="icon"> Math
+            </a>
+        </li>
 
         <!-- First Dropdown: Media -->
         <li class="dropdown">
-            <button class="dropdown-toggle">Media</button> <!-- Changed from <a> to <button> -->
+            <button class="dropdown-toggle">
+                <img src="../icons/clapperboard.png" class="icon"> Media
+                <img src="../icons/chevron.png" class="dropdown-icon">
+            </button>
             <ul class="dropdown-menu">
                 <li><a href="media.html">Games and Shows</a></li>
                 <li><a href="mediaMusic.html">Music</a></li>
@@ -30,62 +43,77 @@
             </ul>
         </li>
 
-      <!-- Second Dropdown: Travel -->
-      <li class="dropdown">
-        <button class="dropdown-toggle">Travel</button> <!-- Changed from <a> to <button> -->
-        <ul class="dropdown-menu">
-            <li><a href="travel.html">2024-2025</a></li>
-            <li><a href="travel2.html">2022-2023</a></li>
-        </ul>
-    </li>
+        <!-- Second Dropdown: Travel -->
+        <li class="dropdown">
+            <button class="dropdown-toggle">
+                <img src="../icons/destination.png" class="icon"> Travel
+                <img src="../icons/chevron.png" class="dropdown-icon">
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="travel.html">2024-2025</a></li>
+                <li><a href="travel2.html">2022-2023</a></li>
+            </ul>
+        </li>
 
-      <li><a href="cooking.html">Cooking</a></li>
+        <li>
+            <a href="cooking.html">
+                <img src="../icons/saute.png" class="icon"> Cooking
+            </a>
+        </li>
     </ul>
 
-  </div>
-  
-    <nav>
-      <div class="ham-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
 
-    <section class="parallax" style=" margin-left: none;">
+  </div>
+
+  
+  <nav class="navbar">
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+    <section class="parallaxA" style=" margin-left: none;">
       <div class="parallax-inner">
         
-        <h1 style="margin-bottom: 5%; color: black; background-color: white; opacity: 0.85; padding-top: .5%; padding-bottom: .5%;">Japan 2024</h1>
+        <h1 style="margin-bottom: 5%; color: #f5f5f5; font-weight: bolder; padding-top: .5%; padding-bottom: .5%;">Japan 2024</h1>
 
         <div class="col-9 col-s-11">
-          <p style="flex-wrap: wrap; background-color: black; opacity: 0.75; text-align: justify; color: white;">
-            Lorem ipsum dolor sit amet. Qui perspiciatis quia At maxime dolorem ut debitis reiciendis. Aut dolorum error At nihil dolorum ab quaerat voluptatem aut consequuntur tenetur ut esse magnam. Et impedit exercitationem et necessitatibus nobis et voluptatibus nemo aut ducimus amet et odio odio et blanditiis facilis. In cupiditate ducimus est doloribus odit At unde quasi a quia vitae non veniam voluptas ab fuga enim qui rerum dolorem.
-  
-            Qui tenetur inventore aut dolores dignissimos non dicta ipsam quo laboriosam molestiae et odio veniam et corrupti consequatur. 33 esse commodi aut nesciunt aliquam sit quia illo in voluptas cumque sed expedita neque vel veniam aliquid ut voluptates voluptate. Et vitae dolorem aut dolores eius aut rerum inventore qui autem enim et culpa ducimus sit minus voluptas!
-  
-            Est quibusdam dolorem qui dignissimos culpa non voluptas sunt qui aliquid iure. Et officiis sint eum voluptatem tempore aut aperiam deleniti eos dolorem soluta quo explicabo architecto in molestiae tempore. Eum explicabo repudiandae ea velit mollitia quo iste sunt et temporibus labore ex maiores autem qui excepturi suscipit ex enim nulla.
-            Lorem ipsum dolor sit amet. Qui perspiciatis quia At maxime dolorem ut debitis reiciendis. Aut dolorum error At nihil dolorum ab quaerat voluptatem aut consequuntur tenetur ut esse magnam. Et impedit exercitationem et necessitatibus nobis et voluptatibus nemo aut ducimus amet et odio odio et blanditiis facilis. In cupiditate ducimus est doloribus odit At unde quasi a quia vitae non veniam voluptas ab fuga enim qui rerum dolorem. Qui tenetur inventore aut dolores dignissimos non dicta ipsam quo laboriosam molestiae et odio veniam et corrupti consequatur. 33 esse commodi aut nesciunt aliquam sit quia illo in voluptas cumque sed expedita neque vel veniam aliquid ut voluptates voluptate. Et vitae dolorem aut dolores eius aut rerum inventore qui autem enim et culpa ducimus sit minus voluptas! Est quibusdam dolorem qui dignissimos culpa non voluptas sunt qui aliquid iure. Et officiis sint eum voluptatem tempore aut aperiam deleniti eos dolorem soluta quo explicabo architecto in molestiae tempore. Eum explicabo repudiandae ea velit mollitia quo iste sunt et temporibus labore ex maiores autem qui excepturi suscipit ex enim nulla.
-          </p>
+          <h2 style="flex-wrap: wrap; background-color: black; opacity: 0.75; text-align: center; color: white;
+            padding: 3vh 3vh 3vh 3vh;">
+            This page uses a lightbox to display photos. <br><br>
+            Try clicking on any of the photos below, you may navigate through them with the chevrons. <br><br>
+            You can also close the lightbox with the exit (cross) on the top right.
+          </h2>
         </div>
 
       </div>
     </section>
 
-    <div class="col-12 col-s-12">
+    <div class="col-11 col-s-12">
 
-      <div class="thumbs" style="margin-top: 3%;">
+      <div class="thumbs scroll-item" style="margin-top: 3%;">
         <a href="#target1"><img src='..\images\Japan\Arakuyama Sengen Park.jpeg' alt=''></a>
         <a href="#target2"><img src='..\images\Japan\Hakone Shrine.jpeg' alt=''></a>
         <a href="#target3"><img src='..\images\Japan\Kiyomizu-dera.jpeg' alt=''></a>
+
+      </div>
+
+      <div class="thumbs scroll-item" style="margin-top: 0%;">
         <a href="#target4"><img src='..\images\Japan\Osaka Castle.jpeg' alt=''></a>
         <a href="#target5"><img src='..\images\Japan\Osaka.jpeg' alt=''></a>
-        <a href="#target5"><img src='..\images\Japan\Arashiyama Bamboo Forest.jpeg' alt=''></a>
+        <a href="#target6"><img src='..\images\Japan\Arashiyama Bamboo Forest.jpeg' alt=''></a>
+      </div>
+
+      <div class="thumbs scroll-item" style="margin-top: 0%;">
+
         <a href="#target7"><img src='..\images\Japan\Odaiba.jpeg' alt=''></a>
         <a href="#target8"><img src='..\images\Japan\Ginza.jpeg' alt=''></a>
         <a href="#target9"><img src='..\images\Japan\Shibuya Sky.jpeg' alt=''></a>
       </div>
 
-      <img class="frame col-9 col-s-11" src="..\images\Japan\Japan 2024.png" style="margin-top: 2%; margin-bottom: 4%;">
+      <img class="scroll-item col-9 col-s-11" src="..\images\Japan\Japan 2024.png" style="margin-top: 2%; margin-bottom: 4%;">
 
         <div class="lightbox" id="lightbox">
 

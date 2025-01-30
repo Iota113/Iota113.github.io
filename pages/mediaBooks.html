@@ -16,13 +16,26 @@
 <body>
 
     <div class="off-screen-menu">
-        <ul style="list-style-type:none;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="math.html">Math</a></li>
+
+        <ul style="list-style-type:none; padding: 0;">
+    
+            <li>
+                <a href="index.html">
+                    <img src="../icons/info.png" class="icon"> Home
+                </a>
+            </li>
+            <li>
+                <a href="math.html">
+                    <img src="../icons/calculus.png" class="icon"> Math
+                </a>
+            </li>
     
             <!-- First Dropdown: Media -->
             <li class="dropdown">
-                <button class="dropdown-toggle">Media</button> <!-- Changed from <a> to <button> -->
+                <button class="dropdown-toggle">
+                    <img src="../icons/clapperboard.png" class="icon"> Media
+                    <img src="../icons/chevron.png" class="dropdown-icon">
+                </button>
                 <ul class="dropdown-menu">
                     <li><a href="media.html">Games and Shows</a></li>
                     <li><a href="mediaMusic.html">Music</a></li>
@@ -30,21 +43,30 @@
                 </ul>
             </li>
     
-          <!-- Second Dropdown: Travel -->
-          <li class="dropdown">
-            <button class="dropdown-toggle">Travel</button> <!-- Changed from <a> to <button> -->
-            <ul class="dropdown-menu">
-                <li><a href="travel.html">2024-2025</a></li>
-                <li><a href="travel2.html">2022-2023</a></li>
-            </ul>
-        </li>
+            <!-- Second Dropdown: Travel -->
+            <li class="dropdown">
+                <button class="dropdown-toggle">
+                    <img src="../icons/destination.png" class="icon"> Travel
+                    <img src="../icons/chevron.png" class="dropdown-icon">
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="travel.html">2024-2025</a></li>
+                    <li><a href="travel2.html">2022-2023</a></li>
+                </ul>
+            </li>
     
-          <li><a href="cooking.html">Cooking</a></li>
+            <li>
+                <a href="cooking.html">
+                    <img src="../icons/saute.png" class="icon"> Cooking
+                </a>
+            </li>
         </ul>
+    
     
       </div>
     
-      <nav>
+    
+      <nav class="navbar">
         <div class="ham-menu">
           <span></span>
           <span></span>

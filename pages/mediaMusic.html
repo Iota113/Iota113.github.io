@@ -9,19 +9,33 @@
     <script src="../scripts/newScript.js" defer></script><script src="https://www.youtube.com/iframe_api" defer></script><script src="../scripts/youtubeAPI.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Media</title>
 </head>
 
 <body>
 
   <div class="off-screen-menu">
-    <ul style="list-style-type:none;">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="math.html">Math</a></li>
+
+    <ul style="list-style-type:none; padding: 0;">
+
+        <li>
+            <a href="index.html">
+                <img src="../icons/info.png" class="icon"> Home
+            </a>
+        </li>
+        <li>
+            <a href="math.html">
+                <img src="../icons/calculus.png" class="icon"> Math
+            </a>
+        </li>
 
         <!-- First Dropdown: Media -->
         <li class="dropdown">
-            <button class="dropdown-toggle">Media</button> <!-- Changed from <a> to <button> -->
+            <button class="dropdown-toggle">
+                <img src="../icons/clapperboard.png" class="icon"> Media
+                <img src="../icons/chevron.png" class="dropdown-icon">
+            </button>
             <ul class="dropdown-menu">
                 <li><a href="media.html">Games and Shows</a></li>
                 <li><a href="mediaMusic.html">Music</a></li>
@@ -29,21 +43,29 @@
             </ul>
         </li>
 
-      <!-- Second Dropdown: Travel -->
-      <li class="dropdown">
-        <button class="dropdown-toggle">Travel</button> <!-- Changed from <a> to <button> -->
-        <ul class="dropdown-menu">
-            <li><a href="travel.html">2024-2025</a></li>
-            <li><a href="travel2.html">2022-2023</a></li>
-        </ul>
-    </li>
+        <!-- Second Dropdown: Travel -->
+        <li class="dropdown">
+            <button class="dropdown-toggle">
+                <img src="../icons/destination.png" class="icon"> Travel
+                <img src="../icons/chevron.png" class="dropdown-icon">
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="travel.html">2024-2025</a></li>
+                <li><a href="travel2.html">2022-2023</a></li>
+            </ul>
+        </li>
 
-      <li><a href="cooking.html">Cooking</a></li>
+        <li>
+            <a href="cooking.html">
+                <img src="../icons/saute.png" class="icon"> Cooking
+            </a>
+        </li>
     </ul>
+
 
   </div>
 
-  <nav>
+  <nav class="navbar">
     <div class="ham-menu">
       <span></span>
       <span></span>
@@ -89,10 +111,10 @@
     </div>
 
     <!-- https://www.youtube.com/watch?v=U3Kip_7ybq8&ab_channel=%E8%80%85%E6%9D%A5%E5%A5%B3-Topic -->
-    <div class="song" data-video-id="U3Kip_7ybq8" data-start-time="148" data-custom-title="屁 (Nonsense!)">
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8e/59/f78e5909-b716-22aa-a886-85b7f3ca5a29/4894965236323.jpg/1200x1200bb.jpg" alt="屁">
+    <div class="song" data-video-id="U3Kip_7ybq8" data-start-time="148" data-custom-title="Nonsense!">
+      <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8e/59/f78e5909-b716-22aa-a886-85b7f3ca5a29/4894965236323.jpg/1200x1200bb.jpg" alt="Nonsense!">
       <div class="info">
-        <h3>屁 (Nonsense!)</h3>
+        <h3>Nonsense!</h3>
         <p>着来女</p>
       </div>
     </div>
