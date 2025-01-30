@@ -4,9 +4,8 @@
 }
 
 body{
-    color:white;
+    color:black;
     font-family: genshinFont;
-    background-image: url("../images/Japan/Asakusa Night.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
