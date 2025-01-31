@@ -23,28 +23,75 @@
 
 /* Navbar links are always visible, no background yet */
 .navbar {
-    /* background-color: transparent;  Initially transparent */
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;  /* Height of the navbar */
-    background-color: transparent;
-    transition: background-color 0.4s ease-out;  /* Smooth background transition */
+    transition: background-color 0.4s ease-out; 
     z-index: 1000;
+    display: flex; 
+    justify-content: center;  /* Center the navbar items */
+    align-items: center;
 }
 
-.navbar:hover {
-    background-color: rgb(255,255,255); /* Background color for the navbar */
+.navbar.scrolled {
+    background-color: rgb(24, 82, 229); /* Change to any color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
 
-@media only screen and (max-width: 590px){
+.navbar a.desktop-link {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 20px;    
+    color: rgb(252, 119, 25);
+    text-decoration: none;
+    font-size: 3vh;
+    display: inline-block;
+    transition: text-shadow 0.3s, color 0.3s;
+}
+
+.navbar a.desktop-link:hover {
+    color: #ff4d00;
+    text-shadow: 0 0 20px #ff4500, 0 0 40px #ff5733, 0 0 60px #ffcc00;
+}
+
+/* Show icons only for mobile view */
+.navbar a.mobile-link {
+    display: none;  /* Hide icons by default */
+    margin-right: 2%;
+    text-decoration: none;
+    color: rgb(11, 1, 1);
+    font-size: 3vh;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 1025px){
+    .navbar:hover { 
+        background-color: rgb(24, 82, 229);
+    }
+}
+
+@media only screen and (max-width: 768px){
     .navbar{
-        background-color: #c9bfbf;
+        background-color: #17b6f5;
+        justify-content: right;
     }
 
-    .navbar:hover{
-        background-color: #c9bfbf;
+    .navbar a{
+       font-size: 2vh;
+       padding: 10px 10px;  
+    }
+
+    .navbar a.desktop-link {
+        display: none;  /* Hide text links on mobile */
+    }
+
+    .navbar a.mobile-link {
+        display: block;  /* Show icons on mobile */
+        font-size: 2.5vh; /* Adjust icon size */
     }
 }
 
@@ -59,13 +106,11 @@
     z-index: 1000;
 }
 
-
 /* Hover state for ham menu */
 .ham-menu:hover {
     cursor: pointer;
     transform: scale(0.75); /* Slightly shrink the menu */
 }
-
 
 .ham-menu span {
     height: 5px;
@@ -108,7 +153,6 @@
     white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Global link and button styles to ensure consistency */
 /* Global link and button styles to ensure consistency */
 .off-screen-menu a,
 .off-screen-menu .dropdown-toggle {

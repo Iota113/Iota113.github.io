@@ -17,7 +17,6 @@
   <div class="off-screen-menu">
 
     <ul style="list-style-type:none; padding: 0;">
-
         <li>
             <a href="index.html">
                 <img src="../icons/info.png" class="icon"> Home
@@ -28,39 +27,22 @@
                 <img src="../icons/calculus.png" class="icon"> Math
             </a>
         </li>
-
-        <!-- First Dropdown: Media -->
-        <li class="dropdown">
-            <button class="dropdown-toggle">
-                <img src="../icons/clapperboard.png" class="icon"> Media
-                <img src="../icons/chevron.png" class="dropdown-icon">
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="media.html">Games and Shows</a></li>
-                <li><a href="mediaMusic.html">Music</a></li>
-                <li><a href="mediaBooks.html">Books</a></li>
-            </ul>
+        <li>
+          <a href="media.html">
+              <img src="../icons/clapperboard.png" class="icon"> Media
+          </a>
         </li>
-
-        <!-- Second Dropdown: Travel -->
-        <li class="dropdown">
-            <button class="dropdown-toggle">
-                <img src="../icons/destination.png" class="icon"> Travel
-                <img src="../icons/chevron.png" class="dropdown-icon">
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="travel.html">2024-2025</a></li>
-                <li><a href="travel2.html">2022-2023</a></li>
-            </ul>
+        <li>
+          <a href="travel.html">
+              <img src="../icons/destination.png" class="icon"> Travel
+          </a>
         </li>
-
         <li>
             <a href="cooking.html">
                 <img src="../icons/saute.png" class="icon"> Cooking
             </a>
         </li>
     </ul>
-
 
   </div>
 
@@ -95,6 +77,12 @@
         <li>Media (Games and Shows) uses a Filterable Gallery.</li>
         <li>Media (Music) uses a YouTube player.</li>
       </ul>
+
+      Dev Journal 31 Jan 2025: Integrated Music, Games and Shows and Books; Japan 2024 and China 2023 / 2024 into one page each by putting them into distinct sections and
+      navigating them with <a> on the navbar. Also updated navbar to be more responsive.<br><br>
+        Funny Story: I spent half an hour troubleshooting the Masonry for China 2023 / 2024 when combining it with Japan into a single page because the width of the container
+        was off and the images were all over the place. It went to the extent of me pulling out the old code from Github and do a one-to-one comparison. Turns out what was causing
+        the issue was me enlarging my browswer view to 110% from the default 100%.
 
     </p>
   </div>

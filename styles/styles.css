@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Adjust based on your navbar height */
+}
+
 @font-face{
     font-family: genshinFont;
     src:"zh-cn.ttf";
