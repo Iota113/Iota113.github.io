@@ -18,31 +18,6 @@ window.addEventListener("scroll", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".dropdown-toggle").forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.stopPropagation(); // Prevents bubbling up
-
-            const dropdown = this.parentElement;
-
-            // Close other dropdowns before opening the clicked one
-            document.querySelectorAll(".dropdown").forEach(d => {
-                if (d !== dropdown) d.classList.remove("active");
-            });
-
-            // Toggle the active class to show/hide the dropdown
-            dropdown.classList.toggle("active");
-        });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function () {
-        document.querySelectorAll(".dropdown").forEach(dropdown => {
-            dropdown.classList.remove("active");
-        });
-    });
-});
-
 // Create an intersection observer instance
 const items = document.querySelectorAll('.scroll-item');
 let lastScrollTime = Date.now(); // Track the last scroll event time

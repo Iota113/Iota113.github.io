@@ -23,7 +23,7 @@
 
 /* Navbar links are always visible, no background yet */
 .navbar {
-    background-color: transparent;
+    background-color: #17b6f5;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,17 +44,27 @@
 .navbar a.desktop-link {
     text-align: center;
     font-weight: bold;
-    padding: 10px 20px;    
-    color: rgb(252, 119, 25);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #ff007f; /* Vibrant pink */
+    border-radius: 50px; /* Rounded corners for pill effect */
     text-decoration: none;
-    font-size: 3vh;
+    font-size: 18px;
     display: inline-block;
-    transition: text-shadow 0.3s, color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    text-transform: uppercase; /* Makes text bold and uppercase */
+    margin-right: 3%;
+    border: 3px solid transparent;
 }
 
 .navbar a.desktop-link:hover {
-    color: #ff4d00;
-    text-shadow: 0 0 20px #ff4500, 0 0 40px #ff5733, 0 0 60px #ffcc00;
+    background-color: transparent; /* Slightly darker pink on hover */
+    transform: scale(1.05); /* Small zoom effect */
+    border: 3px solid #ff007f;
 }
 
 /* Show icons only for mobile view */
@@ -69,9 +79,9 @@
 }
 
 @media only screen and (min-width: 1025px){
-    .navbar:hover { 
+    /* .navbar:hover { 
         background-color: rgb(24, 82, 229);
-    }
+    } */
 }
 
 @media only screen and (max-width: 768px){
@@ -109,7 +119,7 @@
 /* Hover state for ham menu */
 .ham-menu:hover {
     cursor: pointer;
-    transform: scale(0.75); /* Slightly shrink the menu */
+    transform: scale(0.8); /* Slightly shrink the menu */
 }
 
 .ham-menu span {
@@ -144,59 +154,6 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Ensure dropdown menu li items are sized properly */
-.off-screen-menu .dropdown-menu li a {
-    margin-left: 4px;
-    padding: 8px 15px; /* Adjust padding to match text size */
-    font-size: 20px; /* Set the font size for dropdown items */
-    color: #156de1;; /* Optional: Adjust text color for better contrast */
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Global link and button styles to ensure consistency */
-.off-screen-menu a,
-.off-screen-menu .dropdown-toggle {
-    font-size: 30px; /* Larger text size for the menu items */
-    font-family: inherit;
-    font-weight: bolder;
-    color: #156de1;
-    text-decoration: none;
-    padding: 5px 10px;
-    display: inline-block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-}
-
-/* Ensure dropdown menu background and positioning */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 100%; /* Dropdown on the right */
-    background-color: #f6fdfc;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s ease 0.3s;
-}
-
-.dropdown-toggle::after {
-    display: none; /* Hide the default chevron */
-}
-
-/* Adjust dropdown to show when active */
-.dropdown.active .dropdown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
 @media (max-width: 600px) {
 
     .off-screen-menu{
@@ -217,9 +174,11 @@
     vertical-align: middle;
 }
 
-.dropdown-icon {
-    width: 16px;
-    height: 16px;
-    margin-left: 6px;
+.navText{
+    text-decoration: none;
+    border: solid 3px transparent;
+    font-size: 4vh;
+    transition: color 0.7s;
+    text-transform: uppercase;
+    font-weight: bolder;
 }
-

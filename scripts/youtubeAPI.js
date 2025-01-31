@@ -43,7 +43,16 @@ function updateVideoTitle() {
   containerElement.offsetHeight; // Trigger reflow to reset animation
   containerElement.style.animation = 'fadeInTitle 1s forwards';  // Apply animation again
 
-  titleElement.textContent = `Currently Playing: ${customTitle}`;
+  titleElement.textContent = `Now Playing: ${customTitle}`;
+
+  // Highlight the currently playing song
+  document.querySelectorAll(".song").forEach((song) => {
+    song.classList.remove("playing"); // Remove the 'playing' class from all songs
+  });
+
+  if (songElement) {
+    songElement.classList.add("playing"); // Add 'playing' class to the currently playing song
+  }
 }
 
 const songs = document.querySelectorAll(".song");

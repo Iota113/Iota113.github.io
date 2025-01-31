@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../styles/youtubePlayer.css">
     <script src="../scripts/newScript.js" defer></script><script src="../scripts/filterableGallery.js" defer></script>
     <script src="https://www.youtube.com/iframe_api" defer></script><script src="../scripts/youtubeAPI.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
     <title>Media</title>
@@ -23,27 +24,27 @@
 
     <ul style="list-style-type:none; padding: 0;">
         <li>
-            <a href="index.html">
+            <a href="index.html" class="navText"> 
                 <img src="../icons/info.png" class="icon"> Home
             </a>
         </li>
         <li>
-            <a href="math.html">
+            <a href="math.html" class="navText">
                 <img src="../icons/calculus.png" class="icon"> Math
             </a>
         </li>
         <li>
-          <a href="media.html">
+          <a href="media.html" class="navText">
               <img src="../icons/clapperboard.png" class="icon"> Media
           </a>
         </li>
         <li>
-          <a href="travel.html">
+          <a href="travel.html" class="navText">
               <img src="../icons/destination.png" class="icon"> Travel
           </a>
         </li>
         <li>
-            <a href="cooking.html">
+            <a href="cooking.html" class="navText">
                 <img src="../icons/saute.png" class="icon"> Cooking
             </a>
         </li>
@@ -89,10 +90,20 @@
         <div id="video-container" style="margin-top: 30px; margin-bottom: 30px;">
           <div id="yt-player"></div>
         </div>
-      
+
         <div id="current-video-title-container">
-          <span id="current-video-title"></span>
+          <!-- Sound wave icon (SVG) -->
+          <svg id="beat-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+            <rect x="10" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+            <rect x="30" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+            <rect x="50" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+            <rect x="70" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+            <rect x="90" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+          </svg>
+          <span id="current-video-title">Now Playing: Default Song Title</span>
         </div>
+        
+           
       
         <!-- Music Gallery -->
         <div id="musicGallery" style="max-width: 90%; margin-bottom: 30px;">
@@ -106,15 +117,24 @@
             </div>
           </div>
       
-          <!-- https://www.youtube.com/watch?v=4ykHvKBNUfU&ab_channel=Dan -->
-          <div class="song" data-video-id="4ykHvKBNUfU" data-start-time="206" data-custom-title="Old Stories">
+          <!-- https://www.youtube.com/watch?v=KlN0EAILYwA&ab_channel=KevinPenkin-Topic -->
+          <div class="song" data-video-id="KlN0EAILYwA" data-start-time="206" data-custom-title="Old Stories">
             <img src="https://i1.sndcdn.com/artworks-VKtL01JcxMAcg1Vh-EKwEFQ-t500x500.jpg">
             <div class="info">
               <h3>Old Stories</h3>
               <p>Kevin Penkin</p>
             </div>
           </div>
-      
+
+          <!-- https://www.youtube.com/watch?v=zASgXyO7DIc&ab_channel=JanneDaArc-Topic -->
+          <div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="月光花">
+            <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="月光花">
+            <div class="info">
+              <h3>月光花</h3>
+              <p>Janne Da Arc</p>
+            </div>
+          </div>
+          
           <!-- https://www.youtube.com/watch?v=U3Kip_7ybq8&ab_channel=%E8%80%85%E6%9D%A5%E5%A5%B3-Topic -->
           <div class="song" data-video-id="U3Kip_7ybq8" data-start-time="148" data-custom-title="Nonsense!">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8e/59/f78e5909-b716-22aa-a886-85b7f3ca5a29/4894965236323.jpg/1200x1200bb.jpg" alt="Nonsense!">
@@ -123,13 +143,49 @@
               <p>着来女</p>
             </div>
           </div>
+
+          <!-- https://www.youtube.com/watch?v=j2MfP7vhPVQ&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=24&ab_channel=KeigoHoashi-Topic -->
+          <div class="song" data-video-id="x7Tg7AUt3j4" data-start-time="0" data-custom-title="The Sound of the End">
+            <img src="https://i.scdn.co/image/ab67616d0000b273773ee134c736c4b5624977ed" alt="The Sound of the End">
+            <div class="info">
+              <h3 class="special-heading">The Sound of the End</h3>
+              <p>Keigo Hoashi</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=x7Tg7AUt3j4&ab_channel=ShiroSagisu-Topic -->
+          <div class="song" data-video-id="x7Tg7AUt3j4" data-start-time="60" data-custom-title="2211 TYBW racy orchestra">
+            <img src="https://i1.sndcdn.com/artworks-8jR68A2OIJzTAiGx-giHKnA-t1080x1080.jpg" alt="2211 TYBW racy orchestra">
+            <div class="info">
+              <h3 class="special-heading">2211 TYBW racy orchestra</h3>
+              <p>Shiro Saigisu</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=HE5ld2PCWvw&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=38&ab_channel=MYTH%26ROID-Topic -->
+          <div class="song" data-video-id="HE5ld2PCWvw" data-start-time="140" data-custom-title="FOREVER LOST">
+            <img src="https://i.scdn.co/image/ab67616d0000b273b6fd356bedebb4493fe5b84f" alt="FOREVER LOST">
+            <div class="info">
+              <h3 class="special-heading">FOREVER LOST</h3>
+              <p>MYTH & ROID</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=FA1sleY6GY8&ab_channel=YoshihisaHirano-Topic -->
+          <div class="song" data-video-id="HE5ld2PCWvw" data-start-time="0" data-custom-title="Hashire!">
+            <img src="https://i.pinimg.com/736x/2a/3e/0a/2a3e0a3d9118b511adba140c9b38b73e.jpg" alt="Hashire!">
+            <div class="info">
+              <h3 class="special-heading">Hashire!</h3>
+              <p>Yoshihisa Hirano</p>
+            </div>
+          </div>
       
           <!-- https://www.youtube.com/watch?v=Xpkc-NU1KA0&ab_channel=AndrewPrahlow-Topic -->
           <div class="song" data-video-id="Xpkc-NU1KA0" data-start-time="62" data-custom-title="Outer Wilds">
             <img src="https://i.scdn.co/image/ab67616d0000b273db6b8ae97f69fee1d432334d" alt="Outer Wilds">
             <div class="info">
               <h3>Outer Wilds</h3>
-              <p>Andrew Prahlow-</p>
+              <p>Andrew Prahlow</p>
             </div>
           </div>
       
@@ -143,16 +199,41 @@
           </div>
       
           <!-- https://www.youtube.com/watch?v=3J_7BEHLRTE&ab_channel=SonyMusic%28Japan%29 -->
-          <!-- https://www.youtube.com/watch?v=qx5dF-DiLWo&ab_channel=MANWITHAMISSION-Topic -->
-          <div class="song" data-video-id="qx5dF-DiLWo" data-start-time="152" data-custom-title="Dark Crow">
+          <div class="song" data-video-id="3J_7BEHLRTE" data-start-time="152" data-custom-title="Dark Crow">
             <img src="https://m.media-amazon.com/images/I/51mc9j4n3qL._UF1000,1000_QL80_.jpg" alt="Dark Crow">
             <div class="info">
               <h3>Dark Crow</h3>
               <p>Man with a Mission</p>
             </div>
           </div>
+
+          <!-- https://www.youtube.com/watch?v=06NMfUTYbXQ&ab_channel=Woolgatherer -->
+          <div class="song" data-video-id="06NMfUTYbXQ" data-start-time="336" data-custom-title="Colgera">
+            <img src="https://images.ctfassets.net/xuwlxvgj0hyl/2Hddt0JUy8NYiLt91o4P5c/f93661c8f984b94bacd89223fcfad1b3/2250x1266_Ncom_TOTK" alt="Colgera">
+            <div class="info">
+              <h3>Colgera</h3>
+              <p>Manaka Kataoka</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=5DhE_5AWnQM&list=PL8T5PzUlaWEL5qqb7CDN7Q1Aizzn52CF1&index=39&ab_channel=96nekoVEVO -->
+          <div class="song" data-video-id="5DhE_5AWnQM" data-start-time="40" data-custom-title="Uso No Hibana">
+            <img src="https://i.scdn.co/image/ab67616d0000b273b72b42d18616018fcd36c812" alt="Uso No Hibana">
+            <div class="info">
+              <h3>Uso No Hibana</h3>
+              <p>96neko</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=B7Z6P8QMAH4&list=PL8T5PzUlaWEL5qqb7CDN7Q1Aizzn52CF1&index=31&ab_channel=HiroyukiSAWANO-Topic -->
+          <div class="song" data-video-id="B7Z6P8QMAH4" data-start-time="60" data-custom-title="ymniam-MKorch">
+            <img src="https://i.scdn.co/image/ab67616d0000b2739c44e39f1b6aafe87a6db356" alt="ymniam-MKorch">
+            <div class="info">
+              <h3 class="special-heading">ymniam-MKorch</h3>
+              <p>Hiroyuki Sawano</p>
+            </div>
+          </div>
       
-          <!-- https://www.youtube.com/watch?v=mpqY5n4wZhM&ab_channel=MonkeyTrouble -->
           <!-- https://www.youtube.com/watch?v=vp8tjpLAEfA&ab_channel=HiroyukiSAWANO-Topic -->
           <div class="song" data-video-id="vp8tjpLAEfA" data-start-time="97" data-custom-title="T-KT">
             <img src="https://i.scdn.co/image/ab67616d0000b27336c663196e968a1f8b7d6842" alt="T-KT">
@@ -161,7 +242,15 @@
               <p>Hiroyuki Sawano</p>
             </div>
           </div>
-      
+
+          <!-- https://www.youtube.com/watch?v=UI8Iy7kmRxo&ab_channel=Kalafina-Topic -->
+          <div class="song" data-video-id="UI8Iy7kmRxo" data-start-time="176" data-custom-title="Oblivious">
+            <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84c1ee1664b2dcae727f34851b" alt="Oblivious">
+            <div class="info">
+              <h3>Oblivious</h3>
+              <p>Kalafina</p>
+            </div>
+          </div>
       
           <!-- https://www.youtube.com/watch?v=k4PTaB73ZWw&list=PL8T5PzUlaWEL5qqb7CDN7Q1Aizzn52CF1&ab_channel=3LAU -->
           <div class="song" data-video-id="k4PTaB73ZWw" data-start-time="50" data-custom-title="Touch">
@@ -173,11 +262,29 @@
           </div>
       
           <!-- https://www.youtube.com/watch?v=E20drS2Osc4&ab_channel=doa-Topic -->
-          <div class="song" data-video-id="E20drS2Osc4" data-start-time="132" data-custom-title="英雄">
-            <img src="https://i1.sndcdn.com/artworks-000112310993-5gzy2r-t500x500.jpg" alt="英雄">
+          <div class="song" data-video-id="E20drS2Osc4" data-start-time="131" data-custom-title="Eiyuu">
+            <img src="https://i1.sndcdn.com/artworks-000112310993-5gzy2r-t500x500.jpg" alt="Eiyuu">
             <div class="info">
-              <h3>英雄</h3>
+              <h3>Eiyuu</h3>
               <p>doa</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=jYqoa2zBA8s&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=35&ab_channel=Ani-OneAsia -->
+          <div class="song" data-video-id="jYqoa2zBA8s" data-start-time="41" data-custom-title="裸の勇者">
+            <img src="https://cdn.aniblogtracker.com/live/20220408/1649417570.34209.62598.jpg" alt="裸の勇者">
+            <div class="info">
+              <h3 class="special-heading">裸の勇者</h3>
+              <p>Vaundy</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=CeT4_y9iXvc&ab_channel=PeachesLamb -->
+          <div class="song" data-video-id="CeT4_y9iXvc" data-start-time="64" data-custom-title="Field Battle">
+            <img src="https://cdn.mos.cms.futurecdn.net/GhiJBxiD569WuoAymPN6eg.jpg" alt="Field Battle">
+            <div class="info">
+              <h3 class>Field Battle</h3>
+              <p>Manaka Kataoka</p>
             </div>
           </div>
       
@@ -194,8 +301,17 @@
           <div class="song" data-video-id="HplA1TOvdFA" data-start-time="296" data-custom-title="Springtime in a Mirror">
             <img src="https://fastcdn.hoyoverse.com/content-v2/hk4e/127370/640f46b27d1d5f93cbc5b67c465ca019_2597708282666274354.jpg" alt="Springtime in a Mirror">
             <div class="info">
-              <h3>Springtime in a Mirror</h3>
+              <h3 class="special-heading">Springtime in a Mirror</h3>
               <p>HOYO-MiX</p>
+            </div>
+          </div>
+
+          <!-- https://www.youtube.com/watch?v=wPaCgNDwqqs&ab_channel=Lyn-Topic -->
+          <div class="song" data-video-id="wPaCgNDwqqs" data-start-time="86" data-custom-title="Life Will Change">
+            <img src="https://images.genius.com/29fe123938b00fe1522ca7a8c04ff9b5.1000x1000x1.png" alt="Life Will Change">
+            <div class="info">
+              <h3>Life Will Change</h3>
+              <p>Shoji Meguro</p>
             </div>
           </div>
       
@@ -249,6 +365,9 @@
             </div>
             <div class="image scroll-item" data-category="2024">
               <img src="../images/Media 2024-2025/tomodachi game.webp">
+            </div>
+            <div class="image scroll-item" data-category="2024">
+              <img src="../images/Media 2024-2025/bleach tybw.jpg">
             </div>
             <div class="image scroll-item" data-category="2024">
               <img src="../images/Media 2024-2025/godzilla minus one.jpg">
