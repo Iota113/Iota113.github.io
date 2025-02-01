@@ -2,15 +2,26 @@ let player;
 
 // Load the YouTube IFrame API
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player("yt-player", {
-    height: "450",
-    width: "100%",
-    videoId: "nC3Dd3eqZy8", // Default video
-    events: {
-      onReady: onPlayerReady,
-      onStateChange: onPlayerStateChange, // Listen for state changes
-    },
-  });
+
+  const currentPage = window.location.pathname;
+  let autoplay = 1; // Autoplay enabled for page 1
+
+  // Determine the default video ID based on the current page
+  let defaultVideoId = "nC3Dd3eqZy8"; // Default video for page 1
+  if (currentPage.includes("math")) {
+    defaultVideoId = "bOXCLR3Wric"; // Default video for page 2
+    autoplay = 0;
+  }
+
+    player = new YT.Player("yt-player", {
+      height: "450",
+      width: "100%",
+      videoId: defaultVideoId,
+      events: {
+        onReady: onPlayerReady,
+        onStateChange: onPlayerStateChange, // Listen for state changes
+      },
+    });
 }
 
 function onPlayerReady(event) {

@@ -6,14 +6,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/styles.css"><link rel="stylesheet" href="../styles/hamburger.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
-    <script src="../scripts/newScript.js" defer></script>
+    <link rel="stylesheet" href="../styles/youtubePlayer2.css">
+    <script src ="../scripts/newScript.js" defer></script><script src = "../scripts/youtubeAPI2.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
     <title>Math</title>
 </head>
 
-<body style="background-image: url('../images/Japan/Asakusa Night.jpg'); color: white;">
+<body>
 
     <div class="off-screen-menu">
 
@@ -45,29 +46,86 @@
             </li>
         </ul>
     
-      </div>
-    
+    </div>
   
-      <nav class="navbar">
-        <div class="ham-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+    <nav class="navbar">
+    <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </nav>
 
-    <div class="col-6 col-s-11" style="margin-top: 100px; text-align: justify;">
+    <section class="parallaxM" style=" margin-left: none;">
+
+        <div class="parallax-inner">
+        </div>
+
+    </section>
+
+    <div class="col-9 col-s-11">
+        <br><br>
+        <h3 style="text-align: center; font-weight: bold; margin-bottom: 2%;">Good YouTube Videos</h3>
+        <!-- Video Player -->
+        <div id="video-container">
+            <div id="yt-player"></div>
+        </div>
+
+        <div id="videoGallery">
+            <!-- https://www.youtube.com/watch?v=bOXCLR3Wric&t=2s&ab_channel=3Blue1Brown -->
+            <div class="video-item" data-video-id="bOXCLR3Wric">
+                <img src="https://img.youtube.com/vi/bOXCLR3Wric/0.jpg" alt="Video Thumbnail 2">
+            </div>
+            <!-- https://www.youtube.com/watch?v=5NqdDVd_Uuw&t=79s&ab_channel=EpicMathTime -->
+            <div class="video-item" data-video-id="5NqdDVd_Uuw">
+                <img src="https://img.youtube.com/vi/5NqdDVd_Uuw/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=xtg7WaYOF8U&t=9s&ab_channel=%E3%81%9A%E3%82%93%E3%81%A0%E3%82%82%E3%82%93%E3%81%AE%E5%AE%9A%E7%90%86%E3%80%90%E6%95%B0%E5%AD%A6%E8%A7%A3%E8%AA%AC%E3%80%91
+              -->
+            <div class="video-item" data-video-id="xtg7WaYOF8U">
+                <img src="https://img.youtube.com/vi/xtg7WaYOF8U/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=Jk_k3q9RoMU&t=150s&ab_channel=FoolishChemist -->
+            <div class="video-item" data-video-id="Jk_k3q9RoMU">
+                <img src="https://img.youtube.com/vi/Jk_k3q9RoMU/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=ggWYkes-n6E&ab_channel=MITOpenCourseWare -->
+            <div class="video-item" data-video-id="ggWYkes-n6E">
+                <img src="https://img.youtube.com/vi/ggWYkes-n6E/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=B1J6Ou4q8vE&ab_channel=AlanBecker -->
+            <div class="video-item" data-video-id="B1J6Ou4q8vE">
+                <img src="https://img.youtube.com/vi/B1J6Ou4q8vE/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=j5s0h42GfvM&list=LL&index=24&t=94s&ab_channel=EricRowland -->
+            <div class="video-item" data-video-id="j5s0h42GfvM">
+                <img src="https://img.youtube.com/vi/j5s0h42GfvM/0.jpg" alt="">
+            </div>
+            <!-- https://www.youtube.com/watch?v=2n2XGNHsKjA&ab_channel=Mathemaniac -->
+            <div class="video-item" data-video-id="2n2XGNHsKjA">
+                <img src="https://img.youtube.com/vi/2n2XGNHsKjA/0.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-s-11" style="margin-top: 5%; text-align: justify;">
         <p style="font-weight: bold;"> Some History</p>
         <p style="margin-bottom: 0;">The "first math textbook" I read is Book of Proof by Richard Hammack. It introduced me to basic discrete math concepts such as logic 
-        and sets, and paved the way for my future math education. Right now my favourite piece of math is Linear Algebra.</p>
+        and sets, and paved the way for my future math education. <br><br> I think what I like the most about math is how seemingly disconnected concepts are related, 
+        or together part of a bigger idea. For example, the conditions for matrices having left and right inverses are actually just
+        the conditions for functions having those in general, or how the Rank-Nullity Theorem from Linear Algebra is a special case of the First Isomorphism Theorem from Group Theory??? 
+        Something I still don't understand. Generalisation is the name of the game, and I think it is through the pursuit for that that leads to
+        true understanding. Now I don't consider myself all that great at math, but I enjoy the subject and would like to document some of my favourite
+        moments learning it.</p> 
+        <br>
         <p style="font-weight: bold; margin-top: 2%;">More recent stuff</p>
     </div>
 
-    <div class="accordion col-6 col-s-11" id="accordionExample" style ="margin-bottom: 5%;">
+    <div class="accordion col-6 col-s-11" id="accordionExample" style ="margin-bottom: 0%;">
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button collapsed" type="button" style="font-size: 3vh;"
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
                 data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                 Linear Algebra
             </button>
@@ -75,9 +133,11 @@
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
                 <img src="..\images\Math\Linear Algebra.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom:5%; width:40%;">
-                <ul style="font-size: 3vh">
+                <ul style="font-size: 2vh">
                     <li>The Four Fundamental Subspaces</li>
                     <li>Gram-Schmidt Process, Singular Value Decomposition</li>
+                    <li>Least Square Solutions</li>
+                    <li>Polynomial Interpolation</li>
                     <li>God Bless MATLAB</li>
                 </ul>
             </div>
@@ -86,34 +146,19 @@
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" style="font-size: 3vh;"
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
                 data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                 Calculus
             </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body">
-                <ul style="font-size: 3vh">
+                <ul style="font-size: 2vh">
                     <li>Commutativty of the Partial Derivative (Clairaut's Theorem)</li>
-                    <li>The Big Three? Gradient Theorem, Green's Theorem, Divergence Theorem</li>
-                </ul>
-            </div>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" style="font-size: 3vh;"
-                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                Probability and Statistics
-            </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-            <div class="accordion-body">
-                <ul style="font-size: 3vh">
-                    <li>Simpson's Paradox</li>
-                    <li>Symmetric Property of Conditional Probability</li>
-                    <li>Mutual Independence is stronger than Pairwise Independence</li>
+                    <li>Hessian, Lagrange Multipler</li>
+                    <li>Double, Triple, Line and Surface Integrals</li>
+                    <li>Jacobian, Cylindrical and Spherical Coordinates</li>
+                    <li>The Big Three? Gradient Theorem, Green's Theorem / Stokes' Theorem, Divergence Theorem</li>
                 </ul>
             </div>
             </div>
@@ -121,15 +166,37 @@
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-            <button class="accordion-button collapsed" type="button" style="font-size: 3vh;"
-                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                Physics
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                Discrete Math
             </button>
             </h2>
-            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
             <div class="accordion-body">
-                <ul style="font-size: 3vh">
-                    <li>Wave Equation</li>
+                <ul style="font-size: 2vh">
+                    <li>Master Theorem and Akra-Bazzi Method</li>
+                    <li>General Well-Defined Property</li>
+                    <li>Partial Order Relations</li>
+                    <li>Euler Walk and Hamiltonian Circuit</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                Probability and Statistics
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Simpson's Paradox</li>
+                    <li>Symmetric Property of Conditional Probability</li>
+                    <li>Mutual Independence is stronger than Pairwise Independence</li>
+                    <li>Chebyshev's Inequality</li>
                     <li>Evaluating the Gaussian</li>
                 </ul>
             </div>
@@ -137,8 +204,25 @@
         </div>
 
         <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                Physics
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Wave Equation and Polarisation</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+
+        <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-            <button class="accordion-button collapsed" type="button" style="font-size: 3vh;"
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
                 data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                 Programming
             </button>
@@ -146,14 +230,183 @@
             <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
             <div class="accordion-body">
                 <img src="..\images\Math\Rust Frieren.png" style="display: block; margin-left: auto; margin-right: auto; margin-bottom:5%; width:40%;">
-                <ul style="font-size: 3vh">
+                <ul style="font-size: 2vh">
                     <li>Java OOP</li>
                 </ul>
             </div>
             </div>
         </div>
 
+    </div>
+
+    <div class="col-6 col-s-11" style="margin-top: 30px; text-align: justify;">
+        <p style="font-weight: bold; margin-top: 2%;">Legacy Stuff (Badge Collection)</p>
+    </div>
+
+    <div class="accordion col-6 col-s-11" id="accordionExample" style ="margin-bottom: 5%;">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                Calculus
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Fundamental Theorem of Calculus</li>
+                    <li>Roelle's Theorem, Mean Value Theorem</li>
+                    <li>Indeterminate Value Theorem</li>
+                    <li>Half Tangent Substitution, Reduction Formula</li>
+                    <li>Separable Variable, Integrating Factor, Bernoulli's Equation</li>
+                    <li>Characteristic Equation, Complementary Function and Particular Solution</li>
+                    <li>Indeterminate Form and L'hopital's Rule</li>
+                    <li>Concavity, Jensen's Inequality</li>
+                    <li>Inverse Function Integration "Theorem"</li>
+                    <li>Every Function can be expressed as a sum of an even and odd function</li>
+                </ul>
+            </div>
+            </div>
         </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+                Sequences
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingEight">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Arithmetic and Geometric Progression</li>
+                    <li>Grandi's Series, Harmonic Series</li>
+                    <li>Power Series, Maclaurin Series, Taylor Series, Radius of Convergence</li>
+                    <li>Convergence Tests</li>
+                    <li>Partial Sums</li>
+                    <li>Monotone Convergence Theorem</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
+                Discrete Math
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingNine">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Fundamental Theorem of Arithmetic</li>
+                    <li>Bezout's Identity</li>
+                    <li>Wilson's Theorem</li>
+                    <li>Chinese Remainder Theorem</li>
+                    <li>Fermat's Little Theorem, Euler's Totient Function </li>
+                    <li>Dirichlet's theorem on arithmetic progressions</li>
+                    <li>AM-GM, Cauchy-Schwarz, Triangle Inequality</li>
+                    <li>Bijection Principle</li>
+                    <li>Pigeonhole Principle</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="panelsStayOpen-collapseTen">
+                Complex Numbers
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTen">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Fundamental Theorem of Algebra</li>
+                    <li>Complex Conjugate Root Theorem</li>
+                    <li>Demoivre's Theorem</li>
+                    <li>Roots of Unity</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEleven" aria-expanded="false" aria-controls="panelsStayOpen-collapseEleven">
+                Counting, Probability and Statistics
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseEleven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingEleven">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Komolgorov's Axioms</li>
+                    <li>Generating Functions</li>
+                    <li>Markov Chain</li>
+                    <li>Principle of Inclusion-Exclusion</li>
+                    <li>Derangements</li>
+                    <li>Bayes' Theorem</li>
+                    <li>Expectation, Linear Operators</li>
+                    <li>Variance, Covariance</li>
+                    <li>Bernoulli Trials, Binomial Distribution, Geometric Distribution</li>
+                    <li>Poisson Distribution</li>
+                    <li>Normal Distribution, Central Limit Theorem</li>
+                    <li>Unbiased Estimators</li>
+                    <li>Hypothesis Testing</li>
+                    <li>Product Moment Correlation Coefficient</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwelve" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwelve">
+                Proofs, Logic and Sets
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwelve">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>DeMorgan's Laws</li>
+                    <li>Necessary and Sufficient Conditions</li>
+                    <li>Existence and Uniqueness</li>
+                    <li>Proof by Contraditcion, Contrapositive</li>
+                    <li>Power Sets, Cartesian Product, Cantor's Diagonalisation Argument</li>
+                    <li>Proof by Mathematical Induction, Well-Ordering Principle, Method of Infinite Descent</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThirteen">
+            <button class="accordion-button collapsed" type="button" style="font-size: 2.5vh;"
+                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThirteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseThirteen">
+                Geometry
+            </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThirteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThirteen">
+            <div class="accordion-body">
+                <ul style="font-size: 2vh">
+                    <li>Pythagoras' Theorem, Sine Rule, Cosine Rule</li>
+                    <li>Thale's Theorem, Alternate Segment Theorem</li>
+                    <li>Angle Bisector Theorem</li>
+                    <li>Ratio Theorem</li>
+                    <li>Foot of Perpendicular</li>
+                    <li>Scalar Triple Product, Vector Triple Product</li>
+                    <li>Eccentricity, Directrix, Focus</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 
