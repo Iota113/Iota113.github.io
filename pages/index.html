@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/styles.css"><link rel="stylesheet" href="../styles/hamburger.css">
     <script src="../scripts/newScript.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
     <title>Home</title>
@@ -59,9 +61,10 @@
     </div>
   </section>
   
-  <div class="col-9 col-s-11" style="margin-top: 5%;">
+  <div class="col-9 col-s-11" style="margin-top: 5%; margin-bottom: 5%;">
     <h1>Welcome Everyone</h1>
     <p style="flex-wrap: wrap; text-align: justify; color:black;">
+
       This is not a portfolio website, but more of a post-whatever-I-want thing I use to practice some HTML and CSS on the side.
       I am a year 1 Computer Science and Math undergraduate at NUS. My interest lie in applying math to CS and potentially game development.
       
@@ -85,15 +88,202 @@
         the issue was me enlarging my browswer view to 110% from the default 100%.
 
     </p>
-  </div>
 
-  <div class="col-6 col-s-11">
-    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-1-1.jpg" style="margin-top: 1%; object-position: center;">
-    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-2-2.jpg" style="margin-bottom: 1%; object-position: center;">
-    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-3-3.jpg" style="margin-bottom: 1%; object-position: center;">
-    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-4-4.jpg" style="margin-bottom: 1%; object-position: center;">
-  </div>
+    <details>
+      <summary style="font-size: 4vh; margin-top: 5%;">Me coding for CS2040S: </summary>
+      <pre>
+        <code class="language-java">
+            import java.util.Arrays;
 
+            public class Sort {
+            
+                public static void swap(int[] arr, int i, int j){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            
+                public static int[] insertionSort(int[] nums){
+                    int N = nums.length;
+            
+                    for(int i = 1; i < N; i++){
+                        int key = nums[i];
+                        int j = i - 1;
+                        while(j >= 0 && nums[j] > key){
+                            nums[j + 1] = nums[j];
+                            j--;
+                        }
+                        nums[j + 1] = key;
+                    }
+            
+                    return nums;
+                }
+            
+                public static int[] insertionSortRecursive(int[] nums) {
+                    // Start the recursive sorting with index 0 (from the beginning)
+                    return insertionSortRecursiveHelper(nums, nums.length);
+                }
+            
+                public static int[] insertionSortRecursiveHelper(int[] nums, int N){
+                    if(N <= 1){
+                        return nums;
+                    }else{
+                        int[] sorted = insertionSortRecursiveHelper(nums, N-1);
+            
+                        // Inserting the key into the sorted part of the array
+                        int key = nums[N-1];
+                        int i = N - 2;  // Start from the second last element of sorted array
+                        while (i >= 0 && sorted[i] > key) {  // Move elements larger than the key one position ahead
+                            sorted[i + 1] = sorted[i];
+                            i--;
+                        }
+            
+                        // Insert the key at the correct position
+                        sorted[i + 1] = key;
+            
+                        return sorted;
+                    }
+                }
+            
+                public static int[] selectionSort(int[] nums){
+                    // Selection Sort vs. Insertion Sort: in the proper position vs. relatively sorted
+                    // Application in the optimization of the selectionSort
+            
+                    int N = nums.length;
+            
+                    for(int i = 0; i < N - 1; i++){ // Optimization: last element is already sorted
+                        int min_index  = i;
+                        for(int j = i + 1; j < N; j++){ // Fix: Start from j = i + 1
+                            if(nums[j] < nums[min_index]){
+                                min_index = j;
+                            }
+                        }
+                        swap(nums, i, min_index);
+                    }
+            
+                    return nums;
+                }
+            
+                public static int[] bubbleSort(int[] nums){
+                    int N = nums.length;
+                    int num_swaps;
+                    do {
+                        num_swaps = 0;
+                        for(int i = 0; i < N - 1; i++) {
+                            if (nums[i] > nums[i + 1]) {
+                                swap(nums, i, i + 1);
+                                num_swaps++;
+                            }
+                        }
+                        N--; // Optimization: Reduce the range since the last element is in place
+                    } while(num_swaps > 0);
+            
+                    return nums;
+                }
+            
+                public static int[] merge(int[] arr1, int[] arr2){
+                    int[] nums = new int[arr1.length + arr2.length];
+                    int i = 0;
+                    int j = 0;
+                    int k = 0;
+            
+                    while(i < arr1.length && j < arr2.length){
+                        if(arr1[i] > arr2[j]){
+                            nums[k] = arr2[j];
+                            j++;
+                            k++;
+                        }else{
+                            nums[k] = arr1[i];
+                            i++;
+                            k++;
+                        }
+                    }
+            
+                    while(i < arr1.length){
+                        nums[k] = arr1[i];
+                        i++;
+                        k++;
+                    }
+            
+                    while(j < arr2.length){
+                        nums[k] = arr2[j];
+                        j++;
+                        k++;
+                    }
+            
+                    return nums;
+                }
+            
+                public static int[] mergeSort(int nums[]){
+                    int N = nums.length;
+                    if(N <= 1){
+                        return nums;
+                    }else{
+                        int mid = N /2;
+                        int[] arr1 = Arrays.copyOfRange(nums, 0, mid);
+                        int[] arr2 = Arrays.copyOfRange(nums, mid, N);
+                        return merge(mergeSort(arr1), mergeSort(arr2));
+                    }
+                }
+            
+                public static int[] mergeSortIterative(int nums[]){
+                    int N = nums.length;
+            
+                    if(N == 1){
+                        return nums;
+                    }
+            
+                    for(int size = 1; size < N; size *= 2){
+                        for(int left = 0; left < N; left += 2 * size){
+                            // Right is the end of the second subarray
+                            int mid = Math.min(left + size, N);
+                            int right = Math.min(left + 2 * size, N);
+                            mergeIterative(nums, left, mid, right);
+                        }
+                    }
+            
+                    return nums;
+                }
+            
+                public static void mergeIterative(int[] nums, int left, int mid, int right){
+                    int len1 = mid - left;
+                    int len2 = right - mid;
+                    int[] leftArr = new int[len1];
+                    int[] rightArr = new int[len2];
+            
+                    System.arraycopy(nums, left, leftArr, 0, len1);
+                    System.arraycopy(nums, mid, rightArr, 0, len2);
+            
+                    int i = 0, j = 0, k = left;
+            
+                    // Merge the two subarrays
+                    while (i < len1 && j < len2) {
+                        if (leftArr[i] <= rightArr[j]) {
+                            nums[k++] = leftArr[i++];
+                        } else {
+                            nums[k++] = rightArr[j++];
+                        }
+                    }
+            
+                    // Copy any remaining elements in leftArr
+                    while (i < len1) {
+                        nums[k++] = leftArr[i++];
+                    }
+            
+                    // Copy any remaining elements in rightArr
+                    while (j < len2) {
+                        nums[k++] = rightArr[j++];
+                    }
+            
+                }
+            }
+            
+
+        </code>
+      </pre>
+    </details>
+
+  </div>
 
 
 </body>
