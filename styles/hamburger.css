@@ -67,21 +67,8 @@
     border: 3px solid #ff007f;
 }
 
-/* Show icons only for mobile view */
 .navbar a.mobile-link {
-    display: none;  /* Hide icons by default */
-    margin-right: 2%;
-    text-decoration: none;
-    color: rgb(11, 1, 1);
-    font-size: 3vh;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
-}
-
-@media only screen and (min-width: 1025px){
-    /* .navbar:hover { 
-        background-color: rgb(24, 82, 229);
-    } */
+    display: none;
 }
 
 @media only screen and (max-width: 768px){
@@ -100,8 +87,29 @@
     }
 
     .navbar a.mobile-link {
-        display: block;  /* Show icons on mobile */
-        font-size: 2.5vh; /* Adjust icon size */
+        text-align: center;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+        background-color: #ff007f; /* Vibrant pink */
+        border-radius: 50px; /* Rounded corners for pill effect */
+        text-decoration: none;
+        font-size: 12px;
+        display: inline-block;
+        transition: background-color 0.3s, transform 0.2s;
+        border: none;
+        text-transform: uppercase; /* Makes text bold and uppercase */
+        margin-right: 3%;
+        border: 3px solid transparent;
+    }
+
+    .navbar a.mobile-link:hover {
+        background-color: transparent; /* Slightly darker pink on hover */
+        transform: scale(1.05); /* Small zoom effect */
+        border: 3px solid #ff007f;
     }
 }
 
@@ -160,9 +168,8 @@
         max-width: 50%;
     }
 
-    .off-screen-menu a,
-    .off-screen-menu .dropdown-toggle {
-        font-size: 30px;
+    .off-screen-menu .navText{
+        font-size: 3vh;
     }
 
 }
