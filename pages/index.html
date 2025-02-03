@@ -88,123 +88,13 @@
         the issue was me enlarging my browswer view to 110% from the default 100%.
 
     </p>
+  </div>
 
-    <!-- <details>
-      <summary style="font-size: 4vh; margin-top: 5%;">Me coding for CS2040S: </summary>
-      <pre>
-        <code class="language-java">
-          import java.util.Arrays;
-
-          public class Sort {
-
-              public static void swap(int[] arr, int i, int j){
-                  int temp = arr[i];
-                  arr[i] = arr[j];
-                  arr[j] = temp;
-              }
-
-              public static int[] insertionSort(int[] nums){
-                  int N = nums.length;
-
-                  for(int i = 1; i < N; i++){
-                      int key = nums[i];
-                      int j = i - 1;
-                      while(j >= 0 && nums[j] > key){
-                          nums[j + 1] = nums[j];
-                          j--;
-                      }
-                      nums[j + 1] = key;
-                  }
-
-                  return nums;
-              }
-
-              public static int[] selectionSort(int[] nums){
-                  // Selection Sort vs. Insertion Sort: in the proper position vs. relatively sorted
-                  // Application in the optimization of the selectionSort
-
-                  int N = nums.length;
-
-                  for(int i = 0; i < N - 1; i++){ // Optimization: last element is already sorted
-                      int min_index  = i;
-                      for(int j = i + 1; j < N; j++){ // Fix: Start from j = i + 1
-                          if(nums[j] < nums[min_index]){
-                              min_index = j;
-                          }
-                      }
-                      swap(nums, i, min_index);
-                  }
-
-                  return nums;
-              }
-
-              public static int[] bubbleSort(int[] nums){
-                  int N = nums.length;
-                  int num_swaps;
-                  do {
-                      num_swaps = 0;
-                      for(int i = 0; i < N - 1; i++) {
-                          if (nums[i] > nums[i + 1]) {
-                              swap(nums, i, i + 1);
-                              num_swaps++;
-                          }
-                      }
-                      N--; // Optimization: Reduce the range since the last element is in place
-                  } while(num_swaps > 0);
-
-                  return nums;
-              }
-
-              public static int[] merge(int[] arr1, int[] arr2){
-                  int[] nums = new int[arr1.length + arr2.length];
-                  int i = 0;
-                  int j = 0;
-                  int k = 0;
-
-                  while(i < arr1.length && j < arr2.length){
-                      if(arr1[i] > arr2[j]){
-                          nums[k] = arr2[j];
-                          j++;
-                          k++;
-                      }else{
-                          nums[k] = arr1[i];
-                          i++;
-                          k++;
-                      }
-                  }
-
-                  while(i < arr1.length){
-                      nums[k] = arr1[i];
-                      i++;
-                      k++;
-                  }
-
-                  while(j < arr2.length){
-                      nums[k] = arr2[j];
-                      j++;
-                      k++;
-                  }
-
-                  return nums;
-              }
-
-              public static int[] mergeSort(int nums[]){
-                  int N = nums.length;
-                  if(N <= 1){
-                      return nums;
-                  }else{
-                      int mid = N /2;
-                      int[] arr1 = Arrays.copyOfRange(nums, 0, mid);
-                      int[] arr2 = Arrays.copyOfRange(nums, mid, N);
-                      return merge(mergeSort(arr1), mergeSort(arr2));
-                  }
-              }
-          }
-
-        </code>
-      </pre>
-    </details> -->
-
+  <div class="col-6 col-s-11">
+    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-1-1.jpg" style="margin-top: 1%; object-position: center;">
+    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-2-2.jpg" style="margin-bottom: 1%; object-position: center;">
+    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-3-3.jpg" style="margin-bottom: 1%; object-position: center;">
+    <img src="../pdf-to-jpg(Powered by MaxAI)/Sorting Algorithms.pdf-4-4.jpg" style="margin-bottom: 1%; object-position: center;">
   </div>
 
 
