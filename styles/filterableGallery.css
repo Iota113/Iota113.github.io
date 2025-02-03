@@ -9,24 +9,27 @@
   }
   
   .filter-btn {
-    padding: 10px 20px;
+    padding: 5px 30px;
     margin: 5px;
     border: none;
     background-color: #ddd;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: background-color 0.3s;
   }
-  
+
   .filter-btn.active {
     background-color: #007bff;
+    background-color: #eb0872;
     color: white;
   }
-  
+
   .filter-btn:hover {
     background-color: #ccc;
+    background-color: #eb0872;
+    color: white;
   }
-  
+
   .images {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
