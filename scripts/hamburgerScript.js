@@ -71,6 +71,3 @@ setInterval(() => {
 
 // Trigger visibility check on page load (when the page is first loaded or refreshed)
 window.addEventListener('load', checkVisibility);
-
-
-

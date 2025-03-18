@@ -4,15 +4,16 @@
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../styles/styles.css"><link rel="stylesheet" href="../styles/hamburger.css">
-    <link rel="stylesheet" href="../styles/inPageNav.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/hamburger.css">
     <link rel="stylesheet" href="../styles/filterableGallery.css">
-    <link rel="stylesheet" href="../styles/youtubePlayer.css">
-    <script src="../scripts/newScript.js" defer></script><script src="../scripts/filterableGallery.js" defer></script>
-    <script src="../scripts/lightBox.js" defer></script>
-    <script src="https://www.youtube.com/iframe_api" defer></script><script src="../scripts/youtubeAPI.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/musicPlayer.css">
+    <script src="../scripts/hamburgerScript.js" defer></script>
+    <script src="../scripts/filterableGalleryScript.js" defer></script>
+    <script src="../scripts/lightBoxScript.js" defer></script>
+    <script src="../scripts/youtubeMusicScript.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
     <title>Media</title>
@@ -72,445 +73,445 @@
 
   </nav>
 
-    <div class="col-11 col-s-11" style="margin-top: 100px;">
+  <div class="col-3 col-s-2" style="margin-top: 100px;">
 
-      <section id="Music">
+    <section id="Music">
 
-        <h1 style="text-align: center; margin-top: 5%; margin-bottom: 3%;">Music</h1>
+      <h1 style="text-align: center; margin-top: 5%; margin-bottom: 3%;">Music</h1>
 
-        <div class="col-11 col-s-11" style="text-align: justify;">
-          <p>Music is in my opinion the most important aspect in any form of media. All my favourite games and shows have great music, and I think
-            the reason I like them so much is how much the music adds to their emotional impact. Even for otherwise mediocre stuff, music can retroactively make them feel more
-            enjoyable because I spent more time listening to their music after I'm done consuming them, than the time spent actually expriencing them.</p>
-          <p style="font-weight: bold;">Click on any of the following to play:</p>
-        </div>
-      
-         <!-- Video Player -->
-        <div id="video-container" style="margin-top: 30px; margin-bottom: 30px;">
-          <div id="yt-player"></div>
-        </div>
+      <div class="col-11 col-s-11" style="text-align: justify;">
+        <p>Music is in my opinion the most important aspect in any form of media. All my favourite games and shows have great music, and I think
+          the reason I like them so much is how much the music adds to their emotional impact. Even for otherwise mediocre stuff, music can retroactively make them feel more
+          enjoyable because I spent more time listening to their music after I'm done consuming them, than the time spent actually expriencing them.</p>
+        <p style="font-weight: bold;">Click on any of the following to play:</p>
+      </div>
+    
+        <!-- Video Player -->
+      <div id="video-container" style="margin-top: 30px; margin-bottom: 30px;">
+        <div id="yt-player"></div>
+      </div>
 
-        <div id="current-video-title-container">
-          <!-- Sound wave icon (SVG) -->
-          <svg id="beat-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-            <rect x="10" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-            <rect x="30" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-            <rect x="50" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-            <rect x="70" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-            <rect x="90" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-          </svg>
-          <span id="current-video-title">Now Playing: Default Song Title</span>
-        </div>
-           
-        <!-- Music Gallery -->
-        <div id="musicGallery" style="max-width: 90%; margin-bottom: 30px;">
-
-          <!-- https://www.youtube.com/watch?v=nC3Dd3eqZy8&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=7&ab_channel=Amellifera -->
-          <div class="song" data-video-id="nC3Dd3eqZy8" data-start-time="35" data-custom-title="Reflection">
-            <img src="https://i.scdn.co/image/ab67616d0000b273dcbca161a7787a3fe0cb429c" alt="Reflection">
-            <div class="info">
-              <h3>Reflection</h3>
-              <p>Christopher Larkin</p>
-            </div>
-          </div>
+      <div id="current-video-title-container">
+        <!-- Sound wave icon (SVG) -->
+        <svg id="beat-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+          <rect x="10" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+          <rect x="30" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+          <rect x="50" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+          <rect x="70" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+          <rect x="90" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
+        </svg>
+        <span id="current-video-title">Now Playing: Default Song Title</span>
+      </div>
           
-          <!-- https://www.youtube.com/watch?v=keeqPGo-JZ4&ab_channel=GenshinImpact -->
-          <div class="song" data-video-id="keeqPGo-JZ4" data-start-time="678" data-custom-title="Gallant Challenge">
-            <img src="https://i.scdn.co/image/ab67616d0000b273ae37e6f73804085bf53b23c7">
-            <div class="info">
-              <h3>Gallant Challenge</h3>
-              <p>HOYO-MiX</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=KlN0EAILYwA&ab_channel=KevinPenkin-Topic -->
-          <div class="song" data-video-id="KlN0EAILYwA" data-start-time="206" data-custom-title="Old Stories">
-            <img src="https://i1.sndcdn.com/artworks-VKtL01JcxMAcg1Vh-EKwEFQ-t500x500.jpg">
-            <div class="info">
-              <h3>Old Stories</h3>
-              <p>Kevin Penkin</p>
-            </div>
-          </div>
+      <!-- Music Gallery -->
+      <div id="musicGallery" style="max-width: 90%; margin-bottom: 30px;">
 
-          <!-- https://www.youtube.com/watch?v=zASgXyO7DIc&ab_channel=JanneDaArc-Topic -->
-          <div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="月光花">
-            <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="月光花">
-            <div class="info">
-              <h3>月光花</h3>
-              <p>Janne Da Arc</p>
-            </div>
+        <!-- https://www.youtube.com/watch?v=nC3Dd3eqZy8&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=7&ab_channel=Amellifera -->
+        <div class="song" data-video-id="nC3Dd3eqZy8" data-start-time="35" data-custom-title="Reflection">
+          <img src="https://i.scdn.co/image/ab67616d0000b273dcbca161a7787a3fe0cb429c" alt="Reflection">
+          <div class="info">
+            <h3>Reflection</h3>
+            <p>Christopher Larkin</p>
           </div>
-          
-          <!-- https://www.youtube.com/watch?v=U3Kip_7ybq8&ab_channel=%E8%80%85%E6%9D%A5%E5%A5%B3-Topic -->
-          <div class="song" data-video-id="U3Kip_7ybq8" data-start-time="148" data-custom-title="Nonsense!">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8e/59/f78e5909-b716-22aa-a886-85b7f3ca5a29/4894965236323.jpg/1200x1200bb.jpg" alt="Nonsense!">
-            <div class="info">
-              <h3>Nonsense!</h3>
-              <p>着来女</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=j2MfP7vhPVQ&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=24&ab_channel=KeigoHoashi-Topic -->
-          <div class="song" data-video-id="j2MfP7vhPVQ" data-start-time="0" data-custom-title="The Sound of the End">
-            <img src="https://i.scdn.co/image/ab67616d0000b273773ee134c736c4b5624977ed" alt="The Sound of the End">
-            <div class="info">
-              <h3 class="special-heading">The Sound of the End</h3>
-              <p>Keigo Hoashi</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=HE5ld2PCWvw&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=38&ab_channel=MYTH%26ROID-Topic -->
-          <div class="song" data-video-id="HE5ld2PCWvw" data-start-time="140" data-custom-title="FOREVER LOST">
-            <img src="https://i.scdn.co/image/ab67616d0000b273b6fd356bedebb4493fe5b84f" alt="FOREVER LOST">
-            <div class="info">
-              <h3 class="special-heading">FOREVER LOST</h3>
-              <p>MYTH & ROID</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=Xpkc-NU1KA0&ab_channel=AndrewPrahlow-Topic -->
-          <div class="song" data-video-id="Xpkc-NU1KA0" data-start-time="62" data-custom-title="Outer Wilds">
-            <img src="https://i.scdn.co/image/ab67616d0000b273db6b8ae97f69fee1d432334d" alt="Outer Wilds">
-            <div class="info">
-              <h3>Outer Wilds</h3>
-              <p>Andrew Prahlow</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=3J_7BEHLRTE&ab_channel=SonyMusic%28Japan%29 -->
-          <div class="song" data-video-id="3J_7BEHLRTE" data-start-time="152" data-custom-title="Dark Crow">
-            <img src="https://m.media-amazon.com/images/I/51mc9j4n3qL._UF1000,1000_QL80_.jpg" alt="Dark Crow">
-            <div class="info">
-              <h3>Dark Crow</h3>
-              <p>Man with a Mission</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=06NMfUTYbXQ&ab_channel=Woolgatherer -->
-          <div class="song" data-video-id="06NMfUTYbXQ" data-start-time="336" data-custom-title="Colgera">
-            <img src="https://images.ctfassets.net/xuwlxvgj0hyl/2Hddt0JUy8NYiLt91o4P5c/f93661c8f984b94bacd89223fcfad1b3/2250x1266_Ncom_TOTK" alt="Colgera">
-            <div class="info">
-              <h3>Colgera</h3>
-              <p>Manaka Kataoka</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=vp8tjpLAEfA&ab_channel=HiroyukiSAWANO-Topic -->
-          <div class="song" data-video-id="vp8tjpLAEfA" data-start-time="97" data-custom-title="T-KT">
-            <img src="https://i.scdn.co/image/ab67616d0000b27336c663196e968a1f8b7d6842" alt="T-KT">
-            <div class="info">
-              <h3>T-KT</h3>
-              <p>Hiroyuki Sawano</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=UI8Iy7kmRxo&ab_channel=Kalafina-Topic -->
-          <div class="song" data-video-id="UI8Iy7kmRxo" data-start-time="176" data-custom-title="Oblivious">
-            <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84c1ee1664b2dcae727f34851b" alt="Oblivious">
-            <div class="info">
-              <h3>Oblivious</h3>
-              <p>Kalafina</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=E20drS2Osc4&ab_channel=doa-Topic -->
-          <div class="song" data-video-id="E20drS2Osc4" data-start-time="131" data-custom-title="Eiyuu">
-            <img src="https://i1.sndcdn.com/artworks-000112310993-5gzy2r-t500x500.jpg" alt="Eiyuu">
-            <div class="info">
-              <h3>Eiyuu</h3>
-              <p>doa</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=CeT4_y9iXvc&ab_channel=PeachesLamb -->
-          <div class="song" data-video-id="CeT4_y9iXvc" data-start-time="64" data-custom-title="Field Battle">
-            <img src="https://cdn.mos.cms.futurecdn.net/GhiJBxiD569WuoAymPN6eg.jpg" alt="Field Battle">
-            <div class="info">
-              <h3 class>Field Battle</h3>
-              <p>Manaka Kataoka</p>
-            </div>
-          </div>
-      
-          <!-- https://www.youtube.com/watch?v=HplA1TOvdFA&t=291s&ab_channel=GenshinImpact -->
-          <div class="song" data-video-id="HplA1TOvdFA" data-start-time="296" data-custom-title="Springtime in a Mirror">
-            <img src="https://fastcdn.hoyoverse.com/content-v2/hk4e/127370/640f46b27d1d5f93cbc5b67c465ca019_2597708282666274354.jpg" alt="Springtime in a Mirror">
-            <div class="info">
-              <h3 class="special-heading">Springtime in a Mirror</h3>
-              <p>HOYO-MiX</p>
-            </div>
-          </div>
-
-          <!-- https://www.youtube.com/watch?v=wPaCgNDwqqs&ab_channel=Lyn-Topic -->
-          <div class="song" data-video-id="wPaCgNDwqqs" data-start-time="86" data-custom-title="Life Will Change">
-            <img src="https://images.genius.com/29fe123938b00fe1522ca7a8c04ff9b5.1000x1000x1.png" alt="Life Will Change">
-            <div class="info">
-              <h3>Life Will Change</h3>
-              <p>Shoji Meguro</p>
-            </div>
-          </div>
-
-        </div>      
+        </div>
         
-      </section>
-
-      <section id="Games and Shows">
-
-        <h1 style="text-align: center; font-style: italic; margin-bottom: 20px;">" It insists upon itself " - Martin Scorsese</h1>
-
-        <div class="filterGallery">
-          <!-- Filter Buttons -->
-          <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="2025">2025</button>
-            <button class="filter-btn" data-filter="2024">2024</button>
-            <button class="filter-btn" data-filter="2023">2023</button>
-            <button class="filter-btn" data-filter="2022">2022</button>
+        <!-- https://www.youtube.com/watch?v=keeqPGo-JZ4&ab_channel=GenshinImpact -->
+        <div class="song" data-video-id="keeqPGo-JZ4" data-start-time="678" data-custom-title="Gallant Challenge">
+          <img src="https://i.scdn.co/image/ab67616d0000b273ae37e6f73804085bf53b23c7">
+          <div class="info">
+            <h3>Gallant Challenge</h3>
+            <p>HOYO-MiX</p>
           </div>
+        </div>
     
-            <!-- Gallery Images -->
-          <div class="images" style="margin-bottom: 5%;">
-            <div class="image scroll-item" data-category="2025">
-              <img src="..\images\Media 2024-2025\apothecary_diaries.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2025">
-              <img src="..\images\Media 2024-2025\Squid Game.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2025">
-              <img src="../images/Media 2024-2025/jjk.webp">
-            </div>
-            <div class="image scroll-item" data-category="2025">
-              <img src="../images/Media 2024-2025/m3gan.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\Chimera_ant_arc_poster.webp">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\Orb.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/tomodachi game.webp">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2024-2025/bleach tybw.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/godzilla minus one.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/makeine.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/the frog.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/alien romulus.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/longlegs.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/the boy and the heron.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/made in abyss 2.webp">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/ranking of kings.webp">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/mob psycho.webp">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/great pretender.png">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/needyStreamerOverload.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/breaking bad.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/BCS.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/arcane.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/edgerunners.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/detroit become human.webp">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/aot final.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/p3r.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/peaky blinders.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/botw.webp">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/p5r.webp">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/ER.webp">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/totk.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\Black Myth Wukong.avif">
-            </div>
-            <div class="image scroll-item" data-category="2023">
-              <img src="../images/Media 2022-2023/TPhd.png">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/ghostOfTsushima.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\Hollow Knight.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\Echoes of the Eye.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="..\images\Media 2024-2025\SotE.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/ac6.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/ds3.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/ds1.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/tunic.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/liesOfP.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/animal well.avif">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/ssHD.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/lycoris recoil.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/overlord s4.webp">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/neonWhite.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/slay the spire.avif">
-            </div>
-            <div class="image scroll-item" data-category="2024">
-              <img src="../images/Media 2024-2025/sekiro.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/nier automata.avif">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/catherine full body.avif">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/links awakening.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/13 sentinels.webp">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/smtV.jpg">
-            </div>
-            <div class="image scroll-item" data-category="2022">
-              <img src="../images/Media 2022-2023/inscryption.webp">
-            </div>
-  
+        <!-- https://www.youtube.com/watch?v=KlN0EAILYwA&ab_channel=KevinPenkin-Topic -->
+        <div class="song" data-video-id="KlN0EAILYwA" data-start-time="206" data-custom-title="Old Stories">
+          <img src="https://i1.sndcdn.com/artworks-VKtL01JcxMAcg1Vh-EKwEFQ-t500x500.jpg">
+          <div class="info">
+            <h3>Old Stories</h3>
+            <p>Kevin Penkin</p>
           </div>
         </div>
 
-      </section>
-
-      <section id="Books">
-
-        <h1 style="text-align: center; margin-top: 5%; margin-bottom: 3%;">Books</h1>
-        <img class="center" src="..\images\Books\Three Body Problem.jpg">
-        <div class="gallery">
-            <img src="..\images\Books\Devotion of Suspect X.jpg">
-            <img src="..\images\Books\Confessions.jpg">   
-            <img src="..\images\Books\Animal Farm.jpg">
-            <img src="..\images\Books\Tomie.jpg">
+        <!-- https://www.youtube.com/watch?v=zASgXyO7DIc&ab_channel=JanneDaArc-Topic -->
+        <div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="月光花">
+          <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="月光花">
+          <div class="info">
+            <h3>月光花</h3>
+            <p>Janne Da Arc</p>
+          </div>
         </div>
-    
-    
-        <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
-            padding: 2% 2% 2% 2%; background-color: rgba(30, 18, 208, 50%);">
-            <h2>Sci-fi</h2>
-            <ul>
-                <li>Ball Lightning - Liu Cixin</li>
-                <li>Supernova Era - Liu Cixin</li>
-                <li>The Wandering Earth - Liu Cixin</li>
-                <li>To Hold Up the Sky - Liu Cixin</li>
-                <li>Childhood's End - Arthur C. Clarke</li>
-                <li>Children of Time - Adrian Tchaikovsky</li>
-            </ul>
-        </div>
-    
-        <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
-            padding: 2% 2% 2% 2%; background-color: rgba(203, 18, 240, 0.5);">
-        <h2>Mystery</h2>
-            <ul>
-                <li>Midsummer's Equation - Higashino Keigo</li>
-                <li>Salvation of a Saint - Higashino Keigo</li>
-                <li>The Miracles of Namiya General Store - Higashino Keigo</li>
-                <li>Malice - Higashino Keigo</li>
-                <li>Newcomer - Higashino Keigo</li>
-                <li>And Then There Were None - Agatha Christie</li>
-                <li>爱丽丝罪恶奇境 - [日] 早坂吝</li>
-            </ul>
-        </div>
-    
-        <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
-            padding: 2% 2% 2% 2%; background-color: rgba(176, 192, 10, 0.5);">
-        <h2>Weird stuff</h2>
-            <ul>
-                <li>1984 - George Orwell</li>
-                <li>Kafka on the Shore - Haruki Murakami</li>
-                <li>The Wind-Up Bird Chronicle - Haruki Murakami</li>
-                <li>1Q84 - Haruki Murakami</li>
-                <li>Men Without Women - Haruki Murakami</li>
-                <li>Killing Commendatore - Haruki Murakami</li>
-                <li>Colorless Tsukuru Tazaki and His Years of Pilgrimage - Haruki Murakami</li>
-                <li>Spring Snow - Yukio Mishima</li>
-                <li>Runaway Horses - Yukio Mishima</li>
-                <li>The Temple of Dawn - Yukio Mishima</li>
-            </ul>
-        </div>
-    
-        <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
-            padding: 2% 2% 2% 2%; background-color: rgba(44, 230, 12, 0.5);">
-        <h2>Even weirder stuff</h2>
-            <ul>
-                <li>Republic - Plato</li>
-                <li>Sapiens - Yuval Noah Harari</li>
-                <li>Homo Deus - Yuval Noah Harari</li>
-                <li>Brief Answers to the Big Questions - Stephen Hawking</li>
-                <li>Surely You're Joking, Mr. Feynman</li>
-            </ul>
+        
+        <!-- https://www.youtube.com/watch?v=U3Kip_7ybq8&ab_channel=%E8%80%85%E6%9D%A5%E5%A5%B3-Topic -->
+        <div class="song" data-video-id="U3Kip_7ybq8" data-start-time="148" data-custom-title="Nonsense!">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8e/59/f78e5909-b716-22aa-a886-85b7f3ca5a29/4894965236323.jpg/1200x1200bb.jpg" alt="Nonsense!">
+          <div class="info">
+            <h3>Nonsense!</h3>
+            <p>着来女</p>
+          </div>
         </div>
 
-      </section>
+        <!-- https://www.youtube.com/watch?v=j2MfP7vhPVQ&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=24&ab_channel=KeigoHoashi-Topic -->
+        <div class="song" data-video-id="j2MfP7vhPVQ" data-start-time="0" data-custom-title="The Sound of the End">
+          <img src="https://i.scdn.co/image/ab67616d0000b273773ee134c736c4b5624977ed" alt="The Sound of the End">
+          <div class="info">
+            <h3 class="special-heading">The Sound of the End</h3>
+            <p>Keigo Hoashi</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=HE5ld2PCWvw&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=38&ab_channel=MYTH%26ROID-Topic -->
+        <div class="song" data-video-id="HE5ld2PCWvw" data-start-time="140" data-custom-title="FOREVER LOST">
+          <img src="https://i.scdn.co/image/ab67616d0000b273b6fd356bedebb4493fe5b84f" alt="FOREVER LOST">
+          <div class="info">
+            <h3 class="special-heading">FOREVER LOST</h3>
+            <p>MYTH & ROID</p>
+          </div>
+        </div>
+    
+        <!-- https://www.youtube.com/watch?v=Xpkc-NU1KA0&ab_channel=AndrewPrahlow-Topic -->
+        <div class="song" data-video-id="Xpkc-NU1KA0" data-start-time="62" data-custom-title="Outer Wilds">
+          <img src="https://i.scdn.co/image/ab67616d0000b273db6b8ae97f69fee1d432334d" alt="Outer Wilds">
+          <div class="info">
+            <h3>Outer Wilds</h3>
+            <p>Andrew Prahlow</p>
+          </div>
+        </div>
+    
+        <!-- https://www.youtube.com/watch?v=3J_7BEHLRTE&ab_channel=SonyMusic%28Japan%29 -->
+        <div class="song" data-video-id="3J_7BEHLRTE" data-start-time="152" data-custom-title="Dark Crow">
+          <img src="https://m.media-amazon.com/images/I/51mc9j4n3qL._UF1000,1000_QL80_.jpg" alt="Dark Crow">
+          <div class="info">
+            <h3>Dark Crow</h3>
+            <p>Man with a Mission</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=06NMfUTYbXQ&ab_channel=Woolgatherer -->
+        <div class="song" data-video-id="06NMfUTYbXQ" data-start-time="336" data-custom-title="Colgera">
+          <img src="https://images.ctfassets.net/xuwlxvgj0hyl/2Hddt0JUy8NYiLt91o4P5c/f93661c8f984b94bacd89223fcfad1b3/2250x1266_Ncom_TOTK" alt="Colgera">
+          <div class="info">
+            <h3>Colgera</h3>
+            <p>Manaka Kataoka</p>
+          </div>
+        </div>
+    
+        <!-- https://www.youtube.com/watch?v=vp8tjpLAEfA&ab_channel=HiroyukiSAWANO-Topic -->
+        <div class="song" data-video-id="vp8tjpLAEfA" data-start-time="97" data-custom-title="T-KT">
+          <img src="https://i.scdn.co/image/ab67616d0000b27336c663196e968a1f8b7d6842" alt="T-KT">
+          <div class="info">
+            <h3>T-KT</h3>
+            <p>Hiroyuki Sawano</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=UI8Iy7kmRxo&ab_channel=Kalafina-Topic -->
+        <div class="song" data-video-id="UI8Iy7kmRxo" data-start-time="176" data-custom-title="Oblivious">
+          <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da84c1ee1664b2dcae727f34851b" alt="Oblivious">
+          <div class="info">
+            <h3>Oblivious</h3>
+            <p>Kalafina</p>
+          </div>
+        </div>
+    
+        <!-- https://www.youtube.com/watch?v=E20drS2Osc4&ab_channel=doa-Topic -->
+        <div class="song" data-video-id="E20drS2Osc4" data-start-time="131" data-custom-title="Eiyuu">
+          <img src="https://i1.sndcdn.com/artworks-000112310993-5gzy2r-t500x500.jpg" alt="Eiyuu">
+          <div class="info">
+            <h3>Eiyuu</h3>
+            <p>doa</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=CeT4_y9iXvc&ab_channel=PeachesLamb -->
+        <div class="song" data-video-id="CeT4_y9iXvc" data-start-time="64" data-custom-title="Field Battle">
+          <img src="https://cdn.mos.cms.futurecdn.net/GhiJBxiD569WuoAymPN6eg.jpg" alt="Field Battle">
+          <div class="info">
+            <h3 class>Field Battle</h3>
+            <p>Manaka Kataoka</p>
+          </div>
+        </div>
+    
+        <!-- https://www.youtube.com/watch?v=HplA1TOvdFA&t=291s&ab_channel=GenshinImpact -->
+        <div class="song" data-video-id="HplA1TOvdFA" data-start-time="296" data-custom-title="Springtime in a Mirror">
+          <img src="https://fastcdn.hoyoverse.com/content-v2/hk4e/127370/640f46b27d1d5f93cbc5b67c465ca019_2597708282666274354.jpg" alt="Springtime in a Mirror">
+          <div class="info">
+            <h3 class="special-heading">Springtime in a Mirror</h3>
+            <p>HOYO-MiX</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=wPaCgNDwqqs&ab_channel=Lyn-Topic -->
+        <div class="song" data-video-id="wPaCgNDwqqs" data-start-time="86" data-custom-title="Life Will Change">
+          <img src="https://images.genius.com/29fe123938b00fe1522ca7a8c04ff9b5.1000x1000x1.png" alt="Life Will Change">
+          <div class="info">
+            <h3>Life Will Change</h3>
+            <p>Shoji Meguro</p>
+          </div>
+        </div>
+
+      </div>      
       
-    </div>
+    </section>
+
+    <section id="Games and Shows">
+
+      <h1 style="text-align: center; font-style: italic; margin-bottom: 20px;">" It insists upon itself " - Martin Scorsese</h1>
+
+      <div class="filterGallery">
+        <!-- Filter Buttons -->
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="2025">2025</button>
+          <button class="filter-btn" data-filter="2024">2024</button>
+          <button class="filter-btn" data-filter="2023">2023</button>
+          <button class="filter-btn" data-filter="2022">2022</button>
+        </div>
+  
+          <!-- Gallery Images -->
+        <div class="images" style="margin-bottom: 5%;">
+          <div class="image scroll-item" data-category="2025">
+            <img src="..\images\Media 2024-2025\apothecary_diaries.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2025">
+            <img src="..\images\Media 2024-2025\Squid Game.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2025">
+            <img src="../images/Media 2024-2025/jjk.webp">
+          </div>
+          <div class="image scroll-item" data-category="2025">
+            <img src="../images/Media 2024-2025/m3gan.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\Chimera_ant_arc_poster.webp">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\Orb.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/tomodachi game.webp">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2024-2025/bleach tybw.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/godzilla minus one.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/makeine.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/the frog.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/alien romulus.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/longlegs.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/the boy and the heron.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/made in abyss 2.webp">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/ranking of kings.webp">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/mob psycho.webp">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/great pretender.png">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/needyStreamerOverload.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/breaking bad.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/BCS.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/arcane.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/edgerunners.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/detroit become human.webp">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/aot final.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/p3r.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/peaky blinders.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/botw.webp">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/p5r.webp">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/ER.webp">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/totk.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\Black Myth Wukong.avif">
+          </div>
+          <div class="image scroll-item" data-category="2023">
+            <img src="../images/Media 2022-2023/TPhd.png">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/ghostOfTsushima.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\Hollow Knight.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\Echoes of the Eye.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="..\images\Media 2024-2025\SotE.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/ac6.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/ds3.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/ds1.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/tunic.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/liesOfP.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/animal well.avif">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/ssHD.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/lycoris recoil.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/overlord s4.webp">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/neonWhite.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/slay the spire.avif">
+          </div>
+          <div class="image scroll-item" data-category="2024">
+            <img src="../images/Media 2024-2025/sekiro.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/nier automata.avif">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/catherine full body.avif">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/links awakening.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/13 sentinels.webp">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/smtV.jpg">
+          </div>
+          <div class="image scroll-item" data-category="2022">
+            <img src="../images/Media 2022-2023/inscryption.webp">
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="Books">
+
+      <h1 style="text-align: center; margin-top: 5%; margin-bottom: 3%;">Books</h1>
+      <img class="center" src="..\images\Books\Three Body Problem.jpg">
+      <div class="gallery">
+          <img src="..\images\Books\Devotion of Suspect X.jpg">
+          <img src="..\images\Books\Confessions.jpg">   
+          <img src="..\images\Books\Animal Farm.jpg">
+          <img src="..\images\Books\Tomie.jpg">
+      </div>
+  
+  
+      <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
+          padding: 2% 2% 2% 2%; background-color: rgba(30, 18, 208, 50%);">
+          <h2>Sci-fi</h2>
+          <ul>
+              <li>Ball Lightning - Liu Cixin</li>
+              <li>Supernova Era - Liu Cixin</li>
+              <li>The Wandering Earth - Liu Cixin</li>
+              <li>To Hold Up the Sky - Liu Cixin</li>
+              <li>Childhood's End - Arthur C. Clarke</li>
+              <li>Children of Time - Adrian Tchaikovsky</li>
+          </ul>
+      </div>
+  
+      <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
+          padding: 2% 2% 2% 2%; background-color: rgba(203, 18, 240, 0.5);">
+      <h2>Mystery</h2>
+          <ul>
+              <li>Midsummer's Equation - Higashino Keigo</li>
+              <li>Salvation of a Saint - Higashino Keigo</li>
+              <li>The Miracles of Namiya General Store - Higashino Keigo</li>
+              <li>Malice - Higashino Keigo</li>
+              <li>Newcomer - Higashino Keigo</li>
+              <li>And Then There Were None - Agatha Christie</li>
+              <li>爱丽丝罪恶奇境 - [日] 早坂吝</li>
+          </ul>
+      </div>
+  
+      <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
+          padding: 2% 2% 2% 2%; background-color: rgba(176, 192, 10, 0.5);">
+      <h2>Weird stuff</h2>
+          <ul>
+              <li>1984 - George Orwell</li>
+              <li>Kafka on the Shore - Haruki Murakami</li>
+              <li>The Wind-Up Bird Chronicle - Haruki Murakami</li>
+              <li>1Q84 - Haruki Murakami</li>
+              <li>Men Without Women - Haruki Murakami</li>
+              <li>Killing Commendatore - Haruki Murakami</li>
+              <li>Colorless Tsukuru Tazaki and His Years of Pilgrimage - Haruki Murakami</li>
+              <li>Spring Snow - Yukio Mishima</li>
+              <li>Runaway Horses - Yukio Mishima</li>
+              <li>The Temple of Dawn - Yukio Mishima</li>
+          </ul>
+      </div>
+  
+      <div class="col-6 col-s-11" style="display:box; margin: 2% auto 5% auto; 
+          padding: 2% 2% 2% 2%; background-color: rgba(44, 230, 12, 0.5);">
+      <h2>Even weirder stuff</h2>
+          <ul>
+              <li>Republic - Plato</li>
+              <li>Sapiens - Yuval Noah Harari</li>
+              <li>Homo Deus - Yuval Noah Harari</li>
+              <li>Brief Answers to the Big Questions - Stephen Hawking</li>
+              <li>Surely You're Joking, Mr. Feynman</li>
+          </ul>
+      </div>
+
+    </section>
+    
+  </div>
 
 
 

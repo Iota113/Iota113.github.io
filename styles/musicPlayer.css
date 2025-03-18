@@ -1,0 +1,189 @@
+/* Video Player Container */
+#video-container {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    background: white;
+    overflow: hidden;
+    display: none;
+}
+
+#yt-player {
+    width: 100%;
+    height: 450px;
+}
+
+/* Music Gallery Grid */
+#musicGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.song {
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.song:hover {
+    transform: translateY(-5px);
+}
+
+.song img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.song .info {
+    padding: 15px;
+    text-align: center;
+}
+
+.song .info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.song .info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.song.playing {
+    background-color: #f61271; /* Highlight color */
+    color: white; /* Text color when playing */
+    font-weight: bold; /* Optional: make the text bold */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a shadow effect to make it pop */
+}
+
+.song.playing .info p {
+color: white; /* Change the color of the paragraph text inside the song when it is playing */
+}
+
+.song.playing img {
+filter: brightness(80%); /* Dim the image when it is playing for contrast */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #yt-player {
+    height: 300px;
+    }
+
+    #musicGallery {
+    margin-left: 5%;
+    margin-right: 5%;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    max-width: 90%;
+    }
+
+    .song img {
+    height: 60px;
+    }
+
+    .song .info {
+        height: 55px;
+    }
+
+    .song .info h3 {
+    font-size: 8px;
+    margin-bottom: 4px;
+    }
+
+    .song .info p {
+    font-size: 6px;
+    }
+
+    .song h3.special-heading {
+        font-size: 6px;
+    }
+}
+
+/* Styling for the Now Playing section */
+#current-video-title-container {
+    background-color: #0c28daed; /* Dark background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Initially invisible */
+    animation: fadeInTitle .5s;
+}
+
+/* Sound wave bars */
+#beat-icon {
+    display: flex;
+    align-items: flex-end; /* Align bars to the bottom */
+    margin-right: 10px; /* Space between icon and title */
+}
+
+.bar {
+    animation: beatAnimation 1s infinite ease-in-out;
+    transform-origin: bottom; /* Ensure the bars grow upwards from the bottom */
+}
+
+.bar:nth-child(1) {
+    animation-delay: 0s; /* Slight delay for each bar */
+}
+.bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.bar:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+/* Pulse animation for sound wave */
+@keyframes beatAnimation {
+    0%, 100% {
+        height: 30px; /* Default height */
+        y: 60; /* Keep the bottom part fixed */
+    }
+    50% {
+        height: 60px; /* Height at peak of animation */
+        y: 30; /* Pull the bars upwards by 30px to simulate the beat */
+    }
+}
+
+/* Styling for the icon and text */
+#now-playing-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    margin-right: 10px; /* Space between icon and title */
+    color: white; /* Icon color */
+}
+
+#current-video-title {
+    margin-left: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
