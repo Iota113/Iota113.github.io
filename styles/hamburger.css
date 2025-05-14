@@ -23,7 +23,7 @@
 
 /* Navbar links are always visible, no background yet */
 .navbar {
-    background-color: #17b6f5;
+    background-color: #2563eb;
     position: fixed;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@
 }
 
 .navbar.scrolled {
-    background-color: rgb(24, 82, 229); /* Change to any color */
+    background-color: #3aafa9; /* Change to any color */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
 
@@ -49,7 +49,7 @@
     padding-left: 20px;
     padding-right: 20px;
     color: white;
-    background-color: #ff007f; /* Vibrant pink */
+    background-color: #ea6d8c;
     border-radius: 50px; /* Rounded corners for pill effect */
     text-decoration: none;
     font-size: 18px;
@@ -64,7 +64,7 @@
 .navbar a.desktop-link:hover {
     background-color: transparent; /* Slightly darker pink on hover */
     transform: scale(1.05); /* Small zoom effect */
-    border: 3px solid #ff007f;
+    border: 3px solid #ea6d8c;
 }
 
 .navbar a.mobile-link {
@@ -73,7 +73,7 @@
 
 @media only screen and (max-width: 768px){
     .navbar{
-        background-color: #17b6f5;
+        background-color: #3aafa9;
         justify-content: right;
     }
 

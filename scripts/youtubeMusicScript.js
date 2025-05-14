@@ -7,14 +7,14 @@ function onYouTubeIframeAPIReady() {
   let autoplay = 1; // Autoplay enabled for page 1
 
   // Determine the default video ID based on the current page
-  let defaultVideoId = "nC3Dd3eqZy8"; // Default video for page 1
+  let defaultVideoId = "r2iKZ1NWTU"; // Default video for page 1
   if (currentPage.includes("math")) {
     defaultVideoId = "bOXCLR3Wric"; // Default video for page 2
     autoplay = 0;
   }
 
     player = new YT.Player("yt-player", {
-      height: "450",
+      height: window.innerWidth < 768 ? "250" : "450",
       width: "100%",
       videoId: defaultVideoId,
       events: {
@@ -32,39 +32,50 @@ function onPlayerReady(event) {
 
 function onPlayerStateChange(event) {
   // If video ends or starts playing, update the title
+  if (event.data === YT.PlayerState.PLAYING) {
+  setTimeout(updateVideoTitle, 500); // Allow YouTube API to populate metadata
+  }
+
   if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.ENDED) {
     updateVideoTitle();
   }
 }
 
 function updateVideoTitle() {
+  if (!player || typeof player.getVideoData !== "function") {
+    console.warn("Player or getVideoData not ready.");
+    return;
+  }
+
   const videoData = player.getVideoData();
-  const currentVideoId = videoData.video_id; // Get the video ID of the currently playing video
+  if (!videoData || !videoData.video_id) {
+    console.warn("Invalid or missing video data:", videoData);
+    return;
+  }
 
-  // Find the song element that corresponds to the current video
+  const currentVideoId = videoData.video_id;
   const songElement = document.querySelector(`[data-video-id="${currentVideoId}"]`);
-  const customTitle = songElement ? songElement.getAttribute("data-custom-title") : "Unknown Song"; // Fallback if no custom title is found
+  const customTitle = songElement ? songElement.getAttribute("data-custom-title") : "Unknown Song";
 
-  // Display the custom title in the HTML element
   const titleElement = document.getElementById("current-video-title");
   const containerElement = document.getElementById("current-video-title-container");
 
-  // Add animation class (fading effect)
-  containerElement.style.animation = 'none';  // Reset animation
-  containerElement.offsetHeight; // Trigger reflow to reset animation
-  containerElement.style.animation = 'fadeInTitle 1s forwards';  // Apply animation again
+  if (containerElement && titleElement) {
+    containerElement.style.animation = 'none';
+    containerElement.offsetHeight;
+    containerElement.style.animation = 'fadeInTitle 1s forwards';
+    titleElement.textContent = `Now Playing: ${customTitle}`;
+  }
 
-  titleElement.textContent = `Now Playing: ${customTitle}`;
-
-  // Highlight the currently playing song
   document.querySelectorAll(".song").forEach((song) => {
-    song.classList.remove("playing"); // Remove the 'playing' class from all songs
+    song.classList.remove("playing");
   });
 
   if (songElement) {
-    songElement.classList.add("playing"); // Add 'playing' class to the currently playing song
+    songElement.classList.add("playing");
   }
 }
+
 
 const songs = document.querySelectorAll(".song");
 songs.forEach((song) => {
@@ -82,3 +93,18 @@ songs.forEach((song) => {
     updateVideoTitle();
   });
 });
+
+// Play / Pause Buttons
+
+document.getElementById("play-btn").addEventListener("click", () => {
+  if (player && typeof player.playVideo === "function") {
+    player.playVideo();
+  }
+});
+
+document.getElementById("pause-btn").addEventListener("click", () => {
+  if (player && typeof player.pauseVideo === "function") {
+    player.pauseVideo();
+  }
+});
+

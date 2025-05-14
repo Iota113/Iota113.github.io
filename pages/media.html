@@ -78,34 +78,33 @@
 
       <h1 style="text-align: center; margin-top: 5%; margin-bottom: 3%;">Music</h1>
 
-      <div class="col-11 col-s-11" style="text-align: justify;">
-        <p>Music is in my opinion the most important aspect in any form of media. All my favourite games and shows have great music, and I think
-          the reason I like them so much is how much the music adds to their emotional impact. Even for otherwise mediocre stuff, music can retroactively make them feel more
-          enjoyable because I spent more time listening to their music after I'm done consuming them, than the time spent actually expriencing them.</p>
-        <p style="font-weight: bold;">Click on any of the following to play:</p>
+      <div class="col-1 col-s-1" style="text-align: justify;">
+        <p>Music is in my opinion the most important element in any form of media. 
+          All of my favorite games and shows feature exceptional soundtracks, and I believe it’s the music that often amplifies their emotional impact.
+          Even for otherwise mediocre stuff, a powerful score can elevate the experience — 
+          sometimes even retroactively. I’ve found that I often spend more time listening to the music long after 
+          I’ve finished a game or show than I spent actually engaging with it. Here is a nonexhaustive catalogue
+          of some soundtracks I enjoyed dearly.
+        </p>
+
+        <p style="font-weight: bold;">Click on any of the following to play. Note this function hinges on the assumption that you experience no ads / have YouTube Premium.</p>
+      </div>
+
+      <div id="player-controls">
+        <button id="play-btn">▶ Play</button>
+        <button id="pause-btn">⏸ Pause</button>
       </div>
     
         <!-- Video Player -->
       <div id="video-container" style="margin-top: 30px; margin-bottom: 30px;">
         <div id="yt-player"></div>
       </div>
-
-      <div id="current-video-title-container">
-        <!-- Sound wave icon (SVG) -->
-        <svg id="beat-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-          <rect x="10" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-          <rect x="30" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-          <rect x="50" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-          <rect x="70" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-          <rect x="90" y="60" width="10" height="30" fill="#ffffff" class="bar"></rect>
-        </svg>
-        <span id="current-video-title">Now Playing: Default Song Title</span>
-      </div>
           
       <!-- Music Gallery -->
-      <div id="musicGallery" style="max-width: 90%; margin-bottom: 30px;">
+      <div id="musicGallery" style="max-width: 90%; margin-top: 30px; margin-bottom: 30px;">
         <!-- https://www.youtube.com/watch?v=_r2iKZ1NWTU&list=RD_r2iKZ1NWTU&start_radio=1&ab_channel=JungTutis -->
-        <div class="song" data-video-id="r2iKZ1NWTU" data-start-time="0" data-custom-title="Une vie à t'aimer">
+         <!-- https://www.youtube.com/watch?v=3kMbTzomh94&ab_channel=LorienTestard-Topic -->
+        <div class="song" data-video-id="r2iKZ1NWTU&" data-start-time="0" data-custom-title="Une vie à t'aimer">
           <img src="https://images.genius.com/6c934042f0a93fac4954612f7eff551a.300x300x1.png" alt="Une vie à t'aimer">
           <div class="info">
             <h3>Une vie à t'aimer</h3>
@@ -141,10 +140,10 @@
         </div>
 
         <!-- https://www.youtube.com/watch?v=zASgXyO7DIc&ab_channel=JanneDaArc-Topic -->
-        <div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="月光花">
-          <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="月光花">
+        <div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="Gekkouka">
+          <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="Gekkouka">
           <div class="info">
-            <h3>月光花</h3>
+            <h3>Gekkouka</h3>
             <p>Janne Da Arc</p>
           </div>
         </div>
@@ -230,21 +229,21 @@
           </div>
         </div>
 
-        <!-- https://www.youtube.com/watch?v=CeT4_y9iXvc&ab_channel=PeachesLamb -->
-        <div class="song" data-video-id="CeT4_y9iXvc" data-start-time="64" data-custom-title="Field Battle">
-          <img src="https://cdn.mos.cms.futurecdn.net/GhiJBxiD569WuoAymPN6eg.jpg" alt="Field Battle">
+        <!-- https://www.youtube.com/watch?v=uTBlhe7iVyU&ab_channel=TheHouseinFataMorgana -->
+        <div class="song" data-video-id="uTBlhe7iVyU" data-start-time="67" data-custom-title="Giselle">
+          <img src="https://i.scdn.co/image/ab67616d0000b273ef5f97e5aaf2c659e82dcf4d" alt="Giselle">
           <div class="info">
-            <h3 class>Field Battle</h3>
-            <p>Manaka Kataoka</p>
+            <h3 class>Giselle</h3>
+            <p>Gao</p>
           </div>
         </div>
     
-        <!-- https://www.youtube.com/watch?v=HplA1TOvdFA&t=291s&ab_channel=GenshinImpact -->
-        <div class="song" data-video-id="HplA1TOvdFA" data-start-time="296" data-custom-title="Springtime in a Mirror">
-          <img src="https://fastcdn.hoyoverse.com/content-v2/hk4e/127370/640f46b27d1d5f93cbc5b67c465ca019_2597708282666274354.jpg" alt="Springtime in a Mirror">
+      <!-- https://www.youtube.com/watch?v=eZAocot63s8&ab_channel=%E3%82%B9%E3%82%AB%E3%83%91%E3%83%BC%E3%83%BB%E3%83%94%E3%82%AF%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BA%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB -->
+        <div class="song" data-video-id="eZAocot63s8" data-start-time="65" data-custom-title="Kaiju">
+          <img src="https://external-preview.redd.it/orb-on-the-movements-of-the-earth-heading-to-netflix-weekly-v0-IIg2P5jHZm1MRVx-p4z4jPa_BdoqZsGhjTPGycE5Sz4.jpg?auto=webp&s=ab5bc42acfa2ee7b632b5c351dd5db51adce52a8" alt="Kaiju">
           <div class="info">
-            <h3 class="special-heading">Springtime in a Mirror</h3>
-            <p>HOYO-MiX</p>
+            <h3 class="special-heading">Kaiju</h3>
+            <p>sakanaction</p>
           </div>
         </div>
 
@@ -254,6 +253,15 @@
           <div class="info">
             <h3>Life Will Change</h3>
             <p>Shoji Meguro</p>
+          </div>
+        </div>
+
+        <!-- https://www.youtube.com/watch?v=AWukhfiSZVU&ab_channel=HenryJackman-Topic -->
+        <div class="song" data-video-id="AWukhfiSZVU" data-start-time="450" data-custom-title="Captain America">
+          <img src="https://sm.ign.com/ign_ap/cover/c/captain-am/captain-america-the-winter-soldier_hywe.jpg" alt="Captain America">
+          <div class="info">
+            <h3>Captain America</h3>
+            <p>Henry Jackman</p>
           </div>
         </div>
 
@@ -525,8 +533,6 @@
     </section>
     
   </div>
-
-
 
 </body>
 
