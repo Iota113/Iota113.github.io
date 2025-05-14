@@ -7,11 +7,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/hamburger.css">
-    <link rel="stylesheet" href="../styles/youtubePlayer.css">
+    <link rel="stylesheet" href="../styles/YTPlayer.css">
+    <link rel="stylesheet" href="../styles/filterableGallery.css">
     <script src ="../scripts/hamburgerScript.js" defer></script>
     <script src ="../scripts/youtubeVideoScript.js" defer></script>
     <script src="https://www.youtube.com/iframe_api" defer></script>
     <script src ="../scripts/accordionScript.js" defer></script>
+    <script src="../scripts/filterableGalleryScript.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/bonfire.png" sizes="8x8" type="image/png">
     <title>Math</title>
@@ -108,19 +110,41 @@
     </div>
 
     <div class="col-1-left col-s-2" style="margin-top: 5%; text-align: justify;">
-        <p style="font-weight: bold;"> Some History</p>
+        <p style="font-weight: bold;">About Math</p>
         <p style="margin-bottom: 0;">The "first math textbook" I read is Book of Proof by Richard Hammack. It introduced me to basic discrete math concepts such as logic 
         and sets, and paved the way for my future math education. <br><br> I think what I like the most about math is how seemingly disconnected concepts are related, 
         or together part of a bigger idea. For example, the conditions for matrices having left and right inverses are actually just
-        the conditions for functions having those in general, or how the Rank-Nullity Theorem from Linear Algebra is a special case of the First Isomorphism Theorem from Group Theory??? 
-        Something I still don't understand. Generalisation is the name of the game, and I think it is through the pursuit for that that leads to
-        true understanding. Now I don't consider myself all that great at math, but I enjoy the subject and would like to document some of my favourite
-        moments learning it.</p> 
+        the conditions for functions having those in general, or how the Rank-Nullity Theorem from Linear Algebra is a special case of the First Isomorphism Theorem from Group Theory? 
+        Generalisation is the name of the game, and I think it is through the pursuit for that that leads to true understanding.</p> 
         <br>
-        <p style="font-weight: bold; margin-top: 2%;">More Recent Stuff</p>
+        <p style="font-weight: bold; margin-top: 2%;">NUS Module Reviews</p>
     </div>
 
-    <div class="accordion dynamic-accordion col-1-left col-s-2" id="recentMath" data-topics='[
+    <div class="filterGallery col-3 col-s-2">
+        <!-- Filter Buttons -->
+        <!-- <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Year 1">Year 1</button>
+          <button class="filter-btn" data-filter="Year 2">Year 2</button>
+        </div> -->
+        
+        <div class="images" style="margin-bottom: 5%;">
+          <div class="image scroll-item" data-category="Year 1">
+              <img src="..\images\Module Reviews/monads and functors.jpg" alt="monads and functors" />
+          </div>
+            <div class="image scroll-item" data-category="Year 1">
+              <img src="..\images\Module Reviews\SSSP.png" alt="SSSP" />
+          </div>
+          <div class="image scroll-item" data-category="Year 1">
+              <img src="..\images\Module Reviews/stokes theorem.png" alt="stokes Theorem" />
+          </div>
+          <div class="image scroll-item" data-category="Year 1">
+              <img src="..\images/Math/Linear Algebra.png" alt="Green's Theorem" />
+          </div>
+        </div>
+    </div>
+
+    <!-- <div class="accordion dynamic-accordion col-1-left col-s-2" id="recentMath" data-topics='[
         {
             "title": "Linear Algebra",
             "image": "../images/Math/Linear Algebra.png",
@@ -298,7 +322,7 @@
             ]
         }
         ]'>
-    </div>
+    </div> -->
 
 </body>
 

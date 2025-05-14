@@ -64,3 +64,15 @@
     margin: 1.2px;
   }
 }
+
+.filterGallery .images {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .filterGallery .images {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

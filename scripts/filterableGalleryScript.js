@@ -1,25 +1,16 @@
-// Get all filter buttons and images
-const filterButtons = document.querySelectorAll(".filter-btn");
-const images = document.querySelectorAll(".image");
-
-// Add click event listeners to filter buttons
-filterButtons.forEach((button) => {
+document.querySelectorAll(".filter-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    // Remove active class from all buttons
-    filterButtons.forEach((btn) => btn.classList.remove("active"));
-    // Add active class to the clicked button
+    document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
     button.classList.add("active");
 
-    // Get the filter category from the button's data-filter attribute
     const filter = button.dataset.filter;
 
-    // Loop through all images and show/hide based on the filter
-    images.forEach((image) => {
+    document.querySelectorAll(".image").forEach((image) => {
       const category = image.dataset.category;
       if (filter === "all" || category === filter) {
-        image.style.display = "block"; // Show the image
+        image.style.display = "block";
       } else {
-        image.style.display = "none"; // Hide the image
+        image.style.display = "none";
       }
     });
   });
