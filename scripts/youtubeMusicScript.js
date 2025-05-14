@@ -31,14 +31,16 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
-  // If video ends or starts playing, update the title
+  const toggleBtn = document.getElementById("toggle-play");
+
   if (event.data === YT.PlayerState.PLAYING) {
-  setTimeout(updateVideoTitle, 500); // Allow YouTube API to populate metadata
+    toggleBtn.textContent = "⏸ Pause";
+    setTimeout(updateVideoTitle, 500); // Give YouTube time to populate metadata
+  } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+    toggleBtn.textContent = "▶ Play";
   }
 
-  if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.ENDED) {
-    updateVideoTitle();
-  }
+  updateVideoTitle();
 }
 
 function updateVideoTitle() {
@@ -96,15 +98,14 @@ songs.forEach((song) => {
 
 // Play / Pause Buttons
 
-document.getElementById("play-btn").addEventListener("click", () => {
-  if (player && typeof player.playVideo === "function") {
-    player.playVideo();
-  }
-});
+const toggleBtn = document.getElementById("toggle-play");
 
-document.getElementById("pause-btn").addEventListener("click", () => {
-  if (player && typeof player.pauseVideo === "function") {
+toggleBtn.addEventListener("click", () => {
+  if (player.getPlayerState() === YT.PlayerState.PLAYING) {
     player.pauseVideo();
+    toggleBtn.textContent = "▶ Play";
+  } else {
+    player.playVideo();
+    toggleBtn.textContent = "⏸ Pause";
   }
 });
-

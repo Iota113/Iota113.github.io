@@ -66,11 +66,13 @@
     <a href="#Books" class="desktop-link"><span>Books</span></a>
 
     <!-- Icons for Mobile View -->
-    <a href="#Music" class="mobile-link"><img src="../icons/music-player.png" class="icon"></i></a>
-    <a href="#Games and Shows" class="mobile-link"><img src="../icons/joystick.png" class="icon"></i></a>
-    <a href="#Books" class="mobile-link"><img src="../icons/book.png" class="icon"></i></a>
+    <a href="#Music" class="mobile-link-alt"><img src="../icons/music-player.png" class="icon"></i></a>
+    <a href="#Games and Shows" class="mobile-link-alt"><img src="../icons/joystick.png" class="icon"></i></a>
+    <a href="#Books" class="mobile-link-alt"><img src="../icons/book.png" class="icon"></i></a>
 
   </nav>
+
+  <div class="overlay" id="menu-overlay"></div>
 
   <div class="col-3 col-s-2" style="margin-top: 100px;">
 
@@ -91,8 +93,7 @@
       </div>
 
       <div id="player-controls">
-        <button id="play-btn">▶ Play</button>
-        <button id="pause-btn">⏸ Pause</button>
+        <button id="toggle-play" class="music-btn">▶ Play</button>
       </div>
     
         <!-- Video Player -->
@@ -102,9 +103,8 @@
           
       <!-- Music Gallery -->
       <div id="musicGallery" style="max-width: 90%; margin-top: 30px; margin-bottom: 30px;">
-        <!-- https://www.youtube.com/watch?v=_r2iKZ1NWTU&list=RD_r2iKZ1NWTU&start_radio=1&ab_channel=JungTutis -->
-         <!-- https://www.youtube.com/watch?v=3kMbTzomh94&ab_channel=LorienTestard-Topic -->
-        <div class="song" data-video-id="r2iKZ1NWTU&" data-start-time="0" data-custom-title="Une vie à t'aimer">
+      <!-- https://www.youtube.com/watch?v=3kMbTzomh94&ab_channel=LorienTestard-Topic -->
+        <div class="song" data-video-id="3kMbTzomh94" data-start-time="69" data-custom-title="Une vie à t'aimer">
           <img src="https://images.genius.com/6c934042f0a93fac4954612f7eff551a.300x300x1.png" alt="Une vie à t'aimer">
           <div class="info">
             <h3>Une vie à t'aimer</h3>
@@ -168,7 +168,7 @@
 
         <!-- https://www.youtube.com/watch?v=HE5ld2PCWvw&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=38&ab_channel=MYTH%26ROID-Topic -->
         <div class="song" data-video-id="HE5ld2PCWvw" data-start-time="140" data-custom-title="FOREVER LOST">
-          <img src="https://i.scdn.co/image/ab67616d0000b273b6fd356bedebb4493fe5b84f" alt="FOREVER LOST">
+          <img src="https://m.media-amazon.com/images/S/pv-target-images/c7a955fe139f51c58d2b35df63bf70456f289f3276f3f19089f09d547282b13c.jpg" alt="FOREVER LOST">
           <div class="info">
             <h3 class="special-heading">FOREVER LOST</h3>
             <p>MYTH & ROID</p>
@@ -186,7 +186,7 @@
     
         <!-- https://www.youtube.com/watch?v=3J_7BEHLRTE&ab_channel=SonyMusic%28Japan%29 -->
         <div class="song" data-video-id="3J_7BEHLRTE" data-start-time="152" data-custom-title="Dark Crow">
-          <img src="https://m.media-amazon.com/images/I/51mc9j4n3qL._UF1000,1000_QL80_.jpg" alt="Dark Crow">
+          <img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/vinlandsaga.png" alt="Dark Crow">
           <div class="info">
             <h3>Dark Crow</h3>
             <p>Man with a Mission</p>

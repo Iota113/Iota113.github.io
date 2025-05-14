@@ -1,10 +1,8 @@
-/* https://github.com/treehouse/ham-menu */
-
 .off-screen-menu {
-    background-color:  rgb(254, 254, 245);
+    background-color:  #e5e7eb;
     height: 100vh;
     width: 100%;
-    max-width: 450px;
+    max-width: 300px;
     position: fixed;
     top: 0;
     left: -450px;
@@ -21,9 +19,28 @@
     left: 0;
 }
 
+@media (max-width: 600px) {
+
+    .off-screen-menu{
+        max-width: 100%;
+        top: -100vh;
+        left: 0;
+        height: auto; 
+    }
+
+    .off-screen-menu.active {
+        top: 60px;  
+    }
+
+    .off-screen-menu .navText{
+        font-size: 3vh;
+    }
+
+}
+
 /* Navbar links are always visible, no background yet */
 .navbar {
-    background-color: #2563eb;
+    background-color: #3aafa9;
     position: fixed;
     top: 0;
     left: 0;
@@ -49,14 +66,12 @@
     padding-left: 20px;
     padding-right: 20px;
     color: white;
-    background-color: #ea6d8c;
     border-radius: 50px; /* Rounded corners for pill effect */
     text-decoration: none;
-    font-size: 18px;
+    font-size: 2.5vh;
     display: inline-block;
     transition: background-color 0.3s, transform 0.2s;
     border: none;
-    text-transform: uppercase; /* Makes text bold and uppercase */
     margin-right: 3%;
     border: 3px solid transparent;
 }
@@ -64,10 +79,14 @@
 .navbar a.desktop-link:hover {
     background-color: transparent; /* Slightly darker pink on hover */
     transform: scale(1.05); /* Small zoom effect */
-    border: 3px solid #ea6d8c;
+    text-decoration: underline;
 }
 
 .navbar a.mobile-link {
+    display: none;
+}
+
+.navbar a.mobile-link-alt {
     display: none;
 }
 
@@ -94,6 +113,30 @@
         padding-left: 20px;
         padding-right: 20px;
         color: white;
+        border-radius: 50px; /* Rounded corners for pill effect */
+        text-decoration: none;
+        font-size: 2.5vh;
+        display: inline-block;
+        transition: background-color 0.3s, transform 0.2s;
+        border: none;
+        margin-right: 3%;
+        border: 3px solid transparent;
+    }
+
+    .navbar a.mobile-link:hover {
+        background-color: transparent;
+        transform: scale(1.05);
+        text-decoration: underline;
+    }
+
+    .navbar a.mobile-link-alt {
+        text-align: center;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
         background-color: #ff007f; /* Vibrant pink */
         border-radius: 50px; /* Rounded corners for pill effect */
         text-decoration: none;
@@ -101,12 +144,11 @@
         display: inline-block;
         transition: background-color 0.3s, transform 0.2s;
         border: none;
-        text-transform: uppercase; /* Makes text bold and uppercase */
         margin-right: 3%;
         border: 3px solid transparent;
     }
 
-    .navbar a.mobile-link:hover {
+    .navbar a.mobile-link-alt:hover {
         background-color: transparent; /* Slightly darker pink on hover */
         transform: scale(1.05); /* Small zoom effect */
         border: 3px solid #ff007f;
@@ -115,10 +157,10 @@
 
 /* ham menu */
 .ham-menu {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     position: fixed; /* Keeps it in place while scrolling */
-    top: 15px;  /* Distance from the top */
+    top: 20px;  /* Distance from the top */
     left: 15px; /* Adjust as needed */
     transition: transform 0.4s ease;
     z-index: 1000;
@@ -131,9 +173,9 @@
 }
 
 .ham-menu span {
-    height: 5px;
-    width: 100%;
-    background-color: rgb(230, 109, 11);
+    height: 2px;
+    width: 80%;
+    background-color: #e5e7eb;
     border-radius: 25px;
     position: absolute;
     left: 50%;
@@ -148,7 +190,7 @@
     top: 75%;
 }
 .ham-menu.active span {
-    background-color: rgb(230, 109, 11);
+    background-color: #e5e7eb
 }
 .ham-menu.active span:nth-child(1) {
     top: 50%;
@@ -162,18 +204,6 @@
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-@media (max-width: 600px) {
-
-    .off-screen-menu{
-        max-width: 50%;
-    }
-
-    .off-screen-menu .navText{
-        font-size: 3vh;
-    }
-
-}
-
 .icon {
     width: 30px; /* Adjust icon size */
     height: 30px;
@@ -184,8 +214,27 @@
 .navText{
     text-decoration: none;
     border: solid 3px transparent;
-    font-size: 4vh;
+    font-size: 3vh;
     transition: color 0.7s;
-    text-transform: uppercase;
     font-weight: bolder;
+    color: #4F4F4F;
+}
+
+/* Overlay for dimming the background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 800;
+}
+
+.overlay.active {
+  opacity: 0.7;
+  pointer-events: auto;
 }

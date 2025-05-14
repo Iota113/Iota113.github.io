@@ -1,12 +1,11 @@
-/* https://github.com/treehouse/ham-menu */
-
-// <-- Hamburger Menu -- >
 const hamMenu = document.querySelector(".ham-menu");
 const offScreenMenu = document.querySelector(".off-screen-menu");
+const overlay = document.getElementById('menu-overlay');
 
 hamMenu.addEventListener("click", () => {
   hamMenu.classList.toggle("active");
   offScreenMenu.classList.toggle("active");
+  overlay.classList.toggle('active');
 });
 
 window.addEventListener("scroll", function () {
@@ -16,6 +15,11 @@ window.addEventListener("scroll", function () {
     } else {
         navbar.classList.remove("scrolled");
     }
+});
+
+overlay.addEventListener('click', () => {
+  offScreenMenu.classList.remove('active');
+  overlay.classList.remove('active');
 });
 
 // Create an intersection observer instance

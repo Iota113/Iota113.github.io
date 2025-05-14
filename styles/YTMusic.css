@@ -31,6 +31,7 @@
 
 .song:hover {
     transform: translateY(-5px);
+    transform: scale(1.1);
 }
 
 .song img {
@@ -104,90 +105,6 @@ filter: brightness(80%); /* Dim the image when it is playing for contrast */
     }
 }
 
-/* Styling for the Now Playing section */
-#current-video-title-container {
-    background-color: #0c28daed; /* Dark background */
-    padding: 10px 20px;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0; /* Initially invisible */
-    animation: fadeInTitle .5s;
-}
-
-/* Sound wave bars */
-#beat-icon {
-    display: flex;
-    align-items: flex-end; /* Align bars to the bottom */
-    margin-right: 10px; /* Space between icon and title */
-}
-
-.bar {
-    animation: beatAnimation 1s infinite ease-in-out;
-    transform-origin: bottom; /* Ensure the bars grow upwards from the bottom */
-}
-
-.bar:nth-child(1) {
-    animation-delay: 0s; /* Slight delay for each bar */
-}
-.bar:nth-child(2) {
-    animation-delay: 0.1s;
-}
-.bar:nth-child(3) {
-    animation-delay: 0.2s;
-}
-.bar:nth-child(4) {
-    animation-delay: 0.3s;
-}
-.bar:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-/* Pulse animation for sound wave */
-@keyframes beatAnimation {
-    0%, 100% {
-        height: 30px; /* Default height */
-        y: 60; /* Keep the bottom part fixed */
-    }
-    50% {
-        height: 60px; /* Height at peak of animation */
-        y: 30; /* Pull the bars upwards by 30px to simulate the beat */
-    }
-}
-
-/* Styling for the icon and text */
-#now-playing-icon {
-    font-size: 1.5rem; /* Adjust icon size */
-    margin-right: 10px; /* Space between icon and title */
-    color: white; /* Icon color */
-}
-
-#current-video-title {
-    margin-left: 10px;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: capitalize;
-}
-
-@keyframes fadeInTitle {
-    0% {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Play Pause Buttons */
 #player-controls {
   display: flex;
@@ -203,4 +120,24 @@ filter: brightness(80%); /* Dim the image when it is playing for contrast */
   font-size: 14px;
   cursor: pointer;
 }
+
+.music-btn {
+  padding: 20px 40px;
+  margin: 10px;
+  font-size: 1.2rem !important;
+  border: none;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.music-btn:hover {
+  background-color: #ccc;
+  transform: scale(1.1);
+}
+
+
 

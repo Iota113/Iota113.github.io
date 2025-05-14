@@ -54,7 +54,7 @@ img {
     object-fit: cover;
 }
 
-[class*="button-"]{
+/* [class*="button-"]{
     width: 40%;
     padding: .75rem 1.25rem;
     margin-right: 5%;
@@ -75,7 +75,7 @@ img {
         cursor: pointer;
         transform: scale(1.1);
     }
-}
+} */
 
 /* For mobile phones: */
 [class*="col-"] {
