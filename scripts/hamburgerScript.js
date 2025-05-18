@@ -12,8 +12,10 @@ window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) { 
         navbar.classList.add("scrolled");
+        hamMenu.classList.add("scrolled");
     } else {
         navbar.classList.remove("scrolled");
+        hamMenu.classList.remove("scrolled");
     }
 });
 
