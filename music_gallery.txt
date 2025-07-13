@@ -1,0 +1,64 @@
+
+<!-- https://www.youtube.com/watch?v=zASgXyO7DIc&ab_channel=JanneDaArc-Topic -->
+<div class="song" data-video-id="zASgXyO7DIc" data-start-time="37" data-custom-title="Gekkouka">
+    <img src="https://myanimelist.net/images/anime/1588/133791.jpg" alt="Gekkouka">
+    <div class="info">
+    <h3>Gekkouka</h3>
+    <p>Janne Da Arc</p>
+    </div>
+</div>
+
+<!-- https://www.youtube.com/watch?v=HE5ld2PCWvw&list=PL8T5PzUlaWEKD6yZ4jUFz9MEvgEeUAPDo&index=38&ab_channel=MYTH%26ROID-Topic -->
+<div class="song" data-video-id="HE5ld2PCWvw" data-start-time="140" data-custom-title="FOREVER LOST">
+    <img src="https://m.media-amazon.com/images/S/pv-target-images/c7a955fe139f51c58d2b35df63bf70456f289f3276f3f19089f09d547282b13c.jpg" alt="FOREVER LOST">
+    <div class="info">
+    <h3 class="special-heading">FOREVER LOST</h3>
+    <p>MYTH & ROID</p>
+    </div>
+</div>
+
+<!-- https://www.youtube.com/watch?v=3J_7BEHLRTE&ab_channel=SonyMusic%28Japan%29 -->
+<div class="song" data-video-id="3J_7BEHLRTE" data-start-time="152" data-custom-title="Dark Crow">
+    <img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/vinlandsaga.png" alt="Dark Crow">
+    <div class="info">
+    <h3>Dark Crow</h3>
+    <p>Man with a Mission</p>
+    </div>
+</div>
+
+<!-- https://www.youtube.com/watch?v=AWukhfiSZVU&ab_channel=HenryJackman-Topic -->
+<div class="song" data-video-id="AWukhfiSZVU" data-start-time="450" data-custom-title="Captain America">
+    <img src="https://sm.ign.com/ign_ap/cover/c/captain-am/captain-america-the-winter-soldier_hywe.jpg" alt="Captain America">
+    <div class="info">
+    <h3>Captain America</h3>
+    <p>Henry Jackman</p>
+    </div>
+</div>
+
+
+<!-- https://www.youtube.com/watch?v=j2MfP7vhPVQ&list=PL8T5PzUlaWELBDVpYJnoe1yhZk_UxUhs-&index=24&ab_channel=KeigoHoashi-Topic -->
+<div class="song" data-video-id="j2MfP7vhPVQ" data-start-time="0" data-custom-title="The Sound of the End">
+    <img src="https://i.scdn.co/image/ab67616d0000b273773ee134c736c4b5624977ed" alt="The Sound of the End">
+    <div class="info">
+    <h3 class="special-heading">The Sound of the End</h3>
+    <p>Keigo Hoashi</p>
+    </div>
+</div>
+
+<!-- https://www.youtube.com/watch?v=06NMfUTYbXQ&ab_channel=Woolgatherer -->
+<div class="song" data-video-id="06NMfUTYbXQ" data-start-time="336" data-custom-title="Colgera">
+    <img src="https://images.ctfassets.net/xuwlxvgj0hyl/2Hddt0JUy8NYiLt91o4P5c/f93661c8f984b94bacd89223fcfad1b3/2250x1266_Ncom_TOTK" alt="Colgera">
+    <div class="info">
+    <h3>Colgera</h3>
+    <p>Manaka Kataoka</p>
+    </div>
+</div>
+
+<!-- https://www.youtube.com/watch?v=uTBlhe7iVyU&ab_channel=TheHouseinFataMorgana -->
+<div class="song" data-video-id="uTBlhe7iVyU" data-start-time="67" data-custom-title="Giselle">
+    <img src="https://i.scdn.co/image/ab67616d0000b273ef5f97e5aaf2c659e82dcf4d" alt="Giselle">
+    <div class="info">
+    <h3 class>Giselle</h3>
+    <p>Gao</p>
+    </div>
+</div>

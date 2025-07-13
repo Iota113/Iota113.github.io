@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/hamburger.css">
+    <script src ="../../scripts/hamburgerScript.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../bonfire.png" sizes="8x8" type="image/png">
+    <title>Programming Methodology II</title>
+</head>
+
+<body>
+
+    <div class="off-screen-menu">
+
+        <ul style="list-style-type:none; padding: 0;">
+            <li>
+                <a href="../index.html" class="navText"> 
+                    <img src="../../icons/info.png" class="icon"> Home
+                </a>
+            </li>
+            <li>
+                <a href="../math.html" class="navText">
+                    <img src="../../icons/calculus.png" class="icon"> Math
+                </a>
+            </li>
+            <li>
+              <a href="../media.html" class="navText">
+                  <img src="../../icons/clapperboard.png" class="icon"> Media
+              </a>
+            </li>
+            <li>
+              <a href="../travel.html" class="navText">
+                  <img src="../../icons/destination.png" class="icon"> Travel
+              </a>
+            </li>
+            <li>
+                <a href="../cooking.html" class="navText">
+                    <img src="../../icons/saute.png" class="icon"> Cooking
+                </a>
+            </li>
+        </ul>
+    
+    </div>
+  
+    <nav class="navbar">
+    <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </nav>
+
+    <div class="overlay" id="menu-overlay"></div>
+
+    <section class="parallax-java" style=" margin-left: none;">
+    </section>
+
+
+    <div class="responsive-grid" style="margin-left: 10%; margin-right: 10%;">
+        <div class="desktop-margin-bottom" style="margin-top: 5%; font-size: larger;">
+            <h1>CS2030S Programming Methodology II</h1> 
+            <p>Taken in 24/25 Sem 2<br>Profs: Boyd Anderson, Ashish Deepak Dandekar, Ooi Wei Tsang</p>
+            <p>This module teaches mainly Object Oriented Programming and Functional Programming on Java. We are also exposed to Vim and UNIX as all coding — problem sets, practical exams — are done on
+                the terminal with Vim. I did enjoy using Java at the end although everyone likes to complain about it.
+            </p>
+                <ol>
+                    <li>Java OOP</li>
+                    <li>Heap and Stack, Types, Exception Handling, Java Generics</li>
+                    <li>Functional Programming - Immutability, Monads and Functors, Functional Interfaces, Streams</li>
+                    <li>Asynchronous Programming - Threads, CompletableFuture</li>
+                </ol>
+
+             <p>A monad is a monoid in the category of endofunctors ~ I stole this line from some YouTube video.
+                </p>
+
+             <p>It was quite reassuring to see Boyd Anderson again after 1101S. Boyd retains his usual teaching style, always using examples of him "failing" to implement something to motivate the introduction of new concepts. Ashish did some lectures on functional programming. He didn't employ the same theatrics as Boyd but he's solid too. Wei Tsang was just there to answer questions in chat and on Ed.
+            </p>
+
+            <p>
+                Assessment:
+                <ul>
+                    <li>CA (10%)</li>
+                    <li>PE0 (1%*) - 26/26</li>
+                    <li>PE1 (15%) - 27.5/40</li>
+                    <li>PE2 (25%) - 35/40</li>
+                    <li>Midterm (20%) - 55/70</li>
+                    <li>Final (30%) - 89/100</li>
+                    *1% awarded if you didn't get full marks for PE1 and PE2, which will be the case for most of you.
+                </ul>
+            </p>
+            <p> PE0 was a giveaway. PE1 is about applying OOP principles. Most people I know didn't finish PE1, that seems to be trend. Having said that, I know some people who got full marks because. PE2 is on making stream pipelines. Though this sem they had us implement some nested classes with generics too. Most people found PE2 manageable.
+            </p>
+            <p>Midterm and Final are basically the same style as 1101S papers, just without the "problem-solving" aspect because that's saved for 2040S, probably. Majority MCQs with 1-2 short questions. No actual coding here really, besides reading code.
+            </p>
+            <p>Something about type inference: you can think of subtyping (&lt;:) as the less than or equal to relation (≤) from math, so the problem becomes solving inequalities. This (should) work since subtyping is a partial order relation. On that note, might also be useful to think of bounded wildcards in terms of sets hmm.
+            </p>
+            <p>Overall, a less impressive and more boring sequel to 1101S / I am not very good at it.
+            </p>
+        </div>
+
+        <div class="desktop-margin-top">
+            <div class="image">
+                <img src="../../images/Module Reviews/functor.png">
+            </div>
+            <div class="image" style="margin-top: 10%; margin-bottom: 10%;">
+                <img src="../../images/Module Reviews/concurrent.png">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
