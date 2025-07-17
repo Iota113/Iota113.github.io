@@ -4,7 +4,7 @@ let player;
 function onYouTubeIframeAPIReady() {
 
   const currentPage = window.location.pathname;
-  let autoplay = 1; // Autoplay disabled for page 1
+  let autoplay = 0; // Autoplay disabled for page 1
   let defaultVideoId = "3kMbTzomh94"; // Default video for media
   // if (currentPage.includes("math")) {
   //   defaultVideoId = "bOXCLR3Wric"; // Default video for math
@@ -27,7 +27,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   // Autoplay the video when the player is ready
-  event.target.playVideo();
+  // event.target.playVideo();
   updateVideoTitle();
   setupEventListeners(); // <- Add this here
 }
