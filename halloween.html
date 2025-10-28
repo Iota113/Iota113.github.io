@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIN Entry</title>
+    <style>
+        /* --- Page Layout --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Use min-height to allow scrolling if content is tall */
+            margin: 0;
+            padding: 1rem 0; /* Add some padding for small screens */
+            box-sizing: border-box;
+        }
+
+        /* --- PIN Form Styles --- */
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+            /* --- CHANGED --- */
+            width: 90%;         /* Use 90% of screen width */
+            max-width: 300px;   /* But don't go wider than 300px */
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        #pin-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: #d93025;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            min-height: 1.2em;
+        }
+
+        /* --- Secret Content (Starts hidden) --- */
+        #secret-content {
+            display: none; /* This hides it! */
+        }
+
+        /* --- Animation & Shapes Styles --- */
+        .shapes-holder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem; /* Slightly reduced gap */
+            padding: 1rem 0;
+            
+            /* --- CHANGED --- */
+            width: 90%;       /* Takes up most of the screen */
+            max-width: 700px; /* Sets a max-width for the shape container */
+            margin-bottom: 5%;
+        }
+
+        .shape-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            width: 100px;
+            color: #333;
+        }
+
+        /* Base style for all shapes */
+        .shape {
+            width: 50px;
+            height: 50px;
+            /* This is the smooth wave animation */
+            animation: floatWave 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatWave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* 1. Solid Sphere */
+        .solid-sphere {
+            border-radius: 50%;
+            background: black
+        }
+
+        /* 2. Hollow Sphere */
+        .hollow-sphere {
+            border-radius: 50%;
+            border: 3px solid black
+        }
+
+        /* 3. Solid Cylinder */
+        .solid-cylinder {
+            background: black
+        }
+        
+        /* 4. Hollow Cylinder */
+        .hollow-cylinder {
+            border: 3px solid black;
+            box-sizing: border-box;
+        }
+
+        /* The "staggered" wave effect */
+        .shape-wrapper:nth-child(1) .shape { animation-delay: 0s; }
+        .shape-wrapper:nth-child(2) .shape { animation-delay: 0.2s; }
+        .shape-wrapper:nth-child(3) .shape { animation-delay: 0.4s; }
+        .shape-wrapper:nth-child(4) .shape { animation-delay: 0.6s; }
+        .shape-wrapper:nth-child(5) .shape { animation-delay: 0.8s; }
+        .shape-wrapper:nth-child(6) .shape { animation-delay: 1.0s; }
+
+        @media (max-width: 480px) {
+            .shapes-holder {
+                /* On small screens, reduce the gap to fit more */
+                gap: 0.8rem;
+            }
+
+            .shape-wrapper {
+                /* Make the container for each shape smaller */
+                width: 80px;
+            }
+
+            .container {
+                /* Reduce the padding on the PIN box */
+                padding: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="shapes-container" class="shapes-holder">
+        <div class="shape-wrapper">
+            <div class="shape solid-sphere"></div>
+        </div>
+
+        <div class="shape-wrapper">
+            <div class="shape solid-cylinder"></div>
+        </div>
+
+        <div class="shape-wrapper">
+            <div class="shape hollow-sphere"></div>
+        </div>
+
+        <div class="shape-wrapper">
+            <div class="shape solid-cylinder"></div>
+        </div>
+
+        <div class="shape-wrapper">
+            <div class="shape hollow-cylinder"></div>
+        </div>
+
+        <div class="shape-wrapper">
+            <div class="shape hollow-sphere"></div>
+        </div>
+
+    </div>
+
+    <div id="pin-container" class="container">
+        <h2>Enter Your PIN</h2>
+        <p>Please enter the 6-digit PIN to see the content.</p>
+        
+        <input type="password" id="pin-input" maxlength="6" placeholder="******">
+        
+        <button onclick="checkPin()">Submit</button>
+        
+        <p id="error-message"></p>
+    </div>
+
+    <div id="secret-content" class="container">
+        <h2>Access Granted</h2>
+        <p>The Relic has grey/white features.</p>
+    </div>
+
+    <script>
+        function checkPin() {
+            // --- SET YOUR CORRECT PIN HERE ---
+            const correctPin = "342412"; 
+            // ---------------------------------
+
+            // Get the value from the input box
+            const userInput = document.getElementById("pin-input").value;
+            
+            // Get all the page elements
+            const shapesContainer = document.getElementById("shapes-container");
+            const pinContainer = document.getElementById("pin-container");
+            const secretContent = document.getElementById("secret-content");
+            const errorMessage = document.getElementById("error-message");
+
+            // Check if the user's input matches the correct PIN
+            if (userInput === correctPin) {
+                // If correct:
+                // 1. Hide the shapes
+                shapesContainer.style.display = "none";
+                // 2. Hide the PIN entry form
+                pinContainer.style.display = "none";
+                // 3. Show the secret content
+                secretContent.style.display = "block";
+            } else {
+                // If incorrect:
+                // 1. Show an error message
+                errorMessage.textContent = "Incorrect PIN. Please try again.";
+                // 2. Clear the input field
+                document.getElementById("pin-input").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
