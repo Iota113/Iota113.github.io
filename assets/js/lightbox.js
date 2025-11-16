@@ -8,13 +8,11 @@ const closeLinks = document.querySelectorAll(".close"); // Close buttons inside 
 // Function to hide nav and ham-menu when any lightbox target is opened
 function openLightbox() {
     nav.style.display = "none";  // Hide the nav
-    hamMenu.style.display = "none";  // Hide the ham-menu
 }
 
 // Function to show nav and ham-menu when lightbox is closed
 function closeLightbox() {
     nav.style.display = "flex";  // Show the nav again
-    hamMenu.style.display = "block";  // Show the ham-menu again
 }
 
 // Add event listeners to the lightbox open links

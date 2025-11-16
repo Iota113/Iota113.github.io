@@ -3,11 +3,10 @@
   width: 100%;
   height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
-  transform: scale(1);
 }
 
 .zoom-on-hover:hover {
-  transform: scale(1.1); /* slightly zoom in */
+  transform: scale(1.05);
   filter: brightness(1.05); /* optional: make it pop */
 }
 
@@ -19,9 +18,9 @@
   padding: none;
   > a {
     min-width: 20%;
-    max-width: 30%;
-    margin-left: .5%;
-    margin-right: .5%;
+    max-width: 25%;
+    margin-left: .25%;
+    margin-right: .25%;
     margin-bottom: 1%;
     overflow:hidden;
     box-shadow:0 0 0 3px white, 0 5px 8px 3px rgba(black, 0.6);
@@ -37,7 +36,7 @@
     }
     &:hover {
       img {
-        transform:scale(1.1);
+        transform:scale(1.05);
         filter:grayscale(0%);
       }
     }
