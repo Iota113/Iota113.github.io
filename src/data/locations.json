@@ -1,0 +1,116 @@
+{
+  "takayama": {
+    "city_en": "Takayama",
+    "city_zh": "高山",
+    "region_en": "Chubu",
+    "region_zh": "中部"
+  },
+  "matsumoto": {
+    "city_en": "Matsumoto",
+    "city_zh": "松本",
+    "region_en": "Chubu",
+    "region_zh": "中部"
+  },
+  "nikko": {
+    "city_en": "Nikko",
+    "city_zh": "日光",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "osaka": {
+    "city_en": "Osaka",
+    "city_zh": "大阪",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "hiroshima": {
+    "city_en": "Hiroshima",
+    "city_zh": "広島",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "himeji": {
+    "city_en": "Himeji",
+    "city_zh": "姬路",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "hakone": {
+    "city_en": "Hakone",
+    "city_zh": "箱根",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "toyama": {
+    "city_en": "Toyama",
+    "city_zh": "富山",
+    "region_en": "Chubu",
+    "region_zh": "中部"
+  },
+  "kobe": {
+    "city_en": "Kobe",
+    "city_zh": "神户",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "nagoya": {
+    "city_en": "Nagoya",
+    "city_zh": "名古屋",
+    "region_en": "Chubu",
+    "region_zh": "中部"
+  },
+  "kyoto": {
+    "city_en": "Kyoto",
+    "city_zh": "京都",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "kanazawa": {
+    "city_en": "Kanazawa",
+    "city_zh": "金沢",
+    "region_en": "Chubu",
+    "region_zh": "中部"
+  },
+  "fuji": {
+    "city_en": "Fuji",
+    "city_zh": "富士",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "yokohama": {
+    "city_en": "Yokohama",
+    "city_zh": "横浜",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "nara": {
+    "city_en": "Nara",
+    "city_zh": "奈良",
+    "region_en": "Kansai",
+    "region_zh": "関西"
+  },
+  "tokyo": {
+    "city_en": "Tokyo",
+    "city_zh": "東京",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "kawagoe": {
+    "city_en": "Kawagoe",
+    "city_zh": "川越",
+    "region_en": "Kanto",
+    "region_zh": "関東"
+  },
+  "bangkok": {
+    "city_en": "Bangkok",
+    "city_zh": "Bangkok",
+    "region_en": "Southeast Asia",
+    "region_zh": "Southeast Asia"
+  },
+  "chongqing": {
+    "city_en": "Chongqing",
+    "city_zh": "重庆",
+    "region_en": "川渝",
+    "region_zh": "川渝"
+  }
+}
