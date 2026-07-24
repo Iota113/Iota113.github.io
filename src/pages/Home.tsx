@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
 import { ExternalLink } from 'lucide-react';
 import yotsugi from '../../images/yotsugi.webp';
 import yotsugiMobile from '../../images/yotsugi-mobile.webp';
 import { useSeason } from '@/context/SeasonContext';
-import { supabase, ARCHIVE_HIGHLIGHTS_URL, ARCHIVE_URL, TRAVEL_URL, ArchiveMedia } from '../services/supabase';
+import { supabase, ARCHIVE_HIGHLIGHTS_URL } from '../services/supabase';
 import RollingGallery from '../components/RollingGallery';
 import { HybridText } from '../components/HybridText';
 import { SkillsList, Skill } from '../components/SkillsList';
-import { TiltedCard } from '../components/TiltedCard';
-import { TravelModal } from '../components/TravelModal';
 
 interface Inspiration {
   id: string;
   title: string;
   link: string;
-}
-
-interface TravelPreviewPhoto {
-  id: string;
-  place: string;
-  city: string;
-  caption?: string;
-  additional_images: string[];
-  rating: number;
-  is_cover: boolean;
-  visited_at: string;
 }
 
 export const Home: React.FC = () => {
@@ -35,9 +21,6 @@ export const Home: React.FC = () => {
 
   const [skills, setSkills] = useState<Skill[]>([]);
   const [rollingItems, setRollingItems] = useState<any[]>([]);
-  const [recentTravel, setRecentTravel] = useState<TravelPreviewPhoto[]>([]);
-  const [activeTravelPhoto, setActiveTravelPhoto] = useState<TravelPreviewPhoto | null>(null);
-  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const [inspirations, setInspirations] = useState<Inspiration[]>([]);
@@ -45,11 +28,10 @@ export const Home: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [skillsRes, rollingRes, inspirationsRes, travelRes] = await Promise.all([
+        const [skillsRes, rollingRes, inspirationsRes] = await Promise.all([
           supabase.from('skills').select('*').order('display_order', { ascending: true }),
           supabase.from('archive_highlights').select('*'),
-          supabase.from('inspirations').select('*'),
-          supabase.from('travel_photos').select('*').order('visited_at', { ascending: false }).limit(6)
+          supabase.from('inspirations').select('*')
         ]);
 
         if (skillsRes.error) throw skillsRes.error;
@@ -69,10 +51,6 @@ export const Home: React.FC = () => {
           console.error("Supabase Error fetching inspirations:", inspirationsRes.error);
         } else if (inspirationsRes.data) {
           setInspirations(inspirationsRes.data);
-        }
-
-        if (travelRes.data) {
-          setRecentTravel(travelRes.data as TravelPreviewPhoto[]);
         }
 
       } catch (err) {
@@ -186,88 +164,6 @@ export const Home: React.FC = () => {
       <div className="relative w-full z-20 mb-10 md:mb-16">
         <RollingGallery items={rollingItems} tiltAngle={-3} />
       </div>
-
-      {/* --- RECENT TRAVEL PREVIEW SECTION --- */}
-      <div className="px-[10%] flex flex-col gap-4 mb-10 md:mb-16">
-        <div className="flex justify-between items-end mb-2">
-          <h3 className="text-s font-mono tracking-[0.2em] text-accent uppercase flex items-center gap-2">
-            Recent Travel <span className="h-[1.5px] w-12 bg-accent" />
-          </h3>
-          <Link
-            to="/travel"
-            className="text-xs font-mono text-natural-text opacity-60 hover:opacity-100 hover:text-accent transition-all flex items-center gap-1 group"
-          >
-            Explore Travel
-            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </div>
-
-        {isLoading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 animate-pulse">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="aspect-[4/5] rounded-xl bg-natural-border/40" />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {recentTravel.map((photo) => {
-              const getTravelThumbnail = (images: string[]) => {
-                if (!images || images.length === 0) return '';
-                const thumb = images.find(img => img.toLowerCase().includes('thumbnail'));
-                return thumb || images[0];
-              };
-              const renderStars = (rating: number) => {
-                const r = Math.max(0, Math.min(5, Math.floor(rating)));
-                return '★'.repeat(r);
-              };
-              const imgName = getTravelThumbnail(photo.additional_images);
-              const imgUrl = imgName ? `${TRAVEL_URL}/${imgName}` : '';
-              return (
-                <TiltedCard
-                  key={photo.id}
-                  onClick={() => {
-                    setActiveTravelPhoto(photo);
-                    setActiveImageIndex(0);
-                  }}
-                  className="bg-surface-bg border border-natural-border hover:border-accent/80 shadow-sm hover:shadow-ui transition-all duration-300 flex flex-col rounded-[var(--radius-ui)]"
-                >
-                  <div className="aspect-[4/5] w-full bg-natural-bg relative overflow-hidden border-b border-natural-border/90">
-                    <img
-                      src={imgUrl}
-                      alt={photo.place}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    {photo.is_cover && (
-                      <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-accent text-white font-mono text-[8px] rounded-sm tracking-widest uppercase">
-                        Iota's Choice
-                      </div>
-                    )}
-                    <div className="absolute bottom-2 right-2 px-1.5 py-0.5 font-mono text-[10px] rounded-sm border border-accent/25 bg-surface-bg/80 text-yellow-400 backdrop-blur-sm tracking-tight font-semibold">
-                      {renderStars(photo.rating)}
-                    </div>
-                  </div>
-
-                  <div className="p-2.5 flex flex-col gap-0.5 bg-surface-bg">
-                    <div className="flex justify-between items-center text-[9px] font-mono text-text-muted uppercase tracking-wider">
-                      <span className="truncate max-w-[100%]">{photo.city}</span>
-                    </div>
-                    <h3 className="text-sm font-display font-semibold truncate group-hover:text-accent transition-colors">
-                      {photo.place}
-                    </h3>
-                  </div>
-                </TiltedCard>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
-      {/* --- TRAVEL INSPECT MODAL --- */}
-      <TravelModal
-        photo={activeTravelPhoto as any}
-        onClose={() => setActiveTravelPhoto(null)}
-      />
 
       {/* --- NEW INSPIRATIONS SECTION --- */}
       <div className="px-[10%] flex flex-col gap-6 md:pt-4 mb-6 md:mb-12">
