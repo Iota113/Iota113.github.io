@@ -4,6 +4,7 @@ import { supabase, TRAVEL_URL } from '../services/supabase';
 import { useSeason } from '../context/SeasonContext';
 import { TiltedCard } from '../components/TiltedCard';
 import { TravelModal } from '../components/TravelModal';
+import { TravelGuessGame } from '../components/TravelGuessGame';
 import skirkVideoUrl from '../../videos/skirk-star-odyssey.mp4';
 
 interface TravelLocation {
@@ -37,6 +38,7 @@ export const Travel: React.FC = () => {
     const [activePhoto, setActivePhoto] = useState<TravelPhoto | null>(null);
     const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
     const [loading, setLoading] = useState(true);
+    const [gameOpen, setGameOpen] = useState(false);
 
     const pageRef = useRef<HTMLDivElement>(null);
     
@@ -234,10 +236,20 @@ export const Travel: React.FC = () => {
                                 </div>
                             </div>
 
+                            <div className="flex items-center gap-3 self-end md:self-auto">
+
+                            {/* GUESS-THE-CITY GAME LAUNCHER */}
+                            <button
+                                onClick={() => setGameOpen(true)}
+                                className="px-4 py-2 rounded-full font-mono text-[11px] uppercase tracking-wider border border-accent/60 bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-1.5"
+                            >
+                                {lang === 'zh' ? '猜城挑战' : 'Guess the City'}
+                            </button>
+
                             {/* BILINGUAL TOGGLE */}
                             <button
                                 onClick={() => setLang(prev => (prev === 'en' ? 'zh' : 'en'))}
-                                className="relative flex items-center bg-natural-bg/60 border border-natural-border/40 rounded-full p-1 shadow-sm backdrop-blur-sm self-end md:self-auto cursor-pointer select-none structure-focus"
+                                className="relative flex items-center bg-natural-bg/60 border border-natural-border/40 rounded-full p-1 shadow-sm backdrop-blur-sm cursor-pointer select-none structure-focus"
                                 aria-label={`Switch language. Current language is ${lang === 'en' ? 'English' : 'Chinese'}`}
                             >
                                 <div
@@ -252,6 +264,7 @@ export const Travel: React.FC = () => {
                                     中文
                                 </span>
                             </button>
+                            </div>
                         </div>
 
                         <hr className="border-natural-border/20" />
@@ -392,6 +405,15 @@ export const Travel: React.FC = () => {
                 onClose={() => setActivePhoto(null)}
                 locations={locations}
                 lang={lang}
+            />
+
+            {/* --- GUESS-THE-CITY MINIGAME --- */}
+            <TravelGuessGame
+                open={gameOpen}
+                photos={photos}
+                locations={locations}
+                lang={lang}
+                onClose={() => setGameOpen(false)}
             />
 
         </div>

@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
             </motion.div>
           </div>
 
-          <section className="ml-6 max-w-8xl space-y-8">
+          <section className="ml-0 md:ml-6 max-w-8xl space-y-8">
 
             <h1 className="text-2xl md:text-6xl font-light leading-tight tracking-tighter text-natural-text">
               <HybridText text="僕はキメ顔でそう言った。" revealType="blur" periodicInterval={4000} />
