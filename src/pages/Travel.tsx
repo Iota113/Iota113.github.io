@@ -177,16 +177,6 @@ export const Travel: React.FC = () => {
 
     if (loading) return <div className="min-h-screen bg-natural-bg flex items-center justify-center text-accent font-mono animate-pulse">Retrieving Travel Compendium...</div>;
 
-    const getCardBgStyle = () => {
-        switch (season) {
-            case 'spring': return 'bg-rose-50';
-            case 'summer': return 'bg-sky-50';
-            case 'autumn': return 'bg-stone-900 dark';
-            case 'winter': return 'bg-slate-900 dark';
-            default: return 'bg-zinc-900';
-        }
-    };
-
     return (
         <div ref={pageRef} className="min-h-screen w-full text-natural-text flex flex-col items-center pb-16 font-sans overflow-hidden relative transition-colors duration-700">
 

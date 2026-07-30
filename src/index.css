@@ -8,12 +8,16 @@
   --font-mono: "Azeret Mono", monospace;
 
   --color-natural-bg: #FAF9F6;
+  --color-surface-bg: #FFFFFF;
   --color-natural-text: #2D2D2D;
   --color-natural-muted: #555555;
   --color-natural-border: rgba(45, 45, 45, 0.1);
   --color-natural-footer: #F2F1EC;
 
   --color-accent: #4E87B2;
+  --color-text-muted: #555555;
+  --color-secondary: #DFC94A;
+  --color-border: rgba(45, 45, 45, 0.1);
 }
 
 .theme-spring {
@@ -126,6 +130,31 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Seasonal Scrollbar */
+.seasonal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-accent) 60%, transparent) transparent;
+}
+
+.seasonal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.seasonal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.seasonal-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-accent) 50%, transparent);
+  border-radius: 9999px;
+}
+
+.seasonal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-accent) 85%, transparent);
+}
+
 
 .serif-italic {
   @apply font-serif italic;

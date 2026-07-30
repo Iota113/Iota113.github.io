@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useSeason } from '../context/SeasonContext';
 import { TRAVEL_URL } from '../services/supabase';
 
 export interface TravelPhoto {
@@ -42,7 +41,6 @@ export const TravelModal: React.FC<TravelModalProps> = ({
   locations = {},
   lang = 'en',
 }) => {
-  const { season } = useSeason();
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -67,16 +65,6 @@ export const TravelModal: React.FC<TravelModalProps> = ({
       };
     }
   }, [photo, onClose]);
-
-  const getCardBgStyle = () => {
-    switch (season) {
-      case 'spring': return 'bg-rose-50';
-      case 'summer': return 'bg-sky-50';
-      case 'autumn': return 'bg-stone-900 dark';
-      case 'winter': return 'bg-slate-900 dark';
-      default: return 'bg-zinc-900';
-    }
-  };
 
   const getImageUrl = (filename: string) => {
     if (!filename) return '';
@@ -110,7 +98,7 @@ export const TravelModal: React.FC<TravelModalProps> = ({
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className={`${getCardBgStyle()} w-full max-w-6xl rounded-[var(--radius-ui)] overflow-hidden border border-natural-border shadow-ui flex flex-col md:flex-row h-auto max-h-[90vh] md:max-h-[85vh]`}
+              className="w-full max-w-6xl rounded-[var(--radius-ui)] overflow-hidden border border-natural-border bg-surface-bg text-natural-text shadow-ui flex flex-col md:flex-row h-auto max-h-[90vh] md:max-h-[85vh]"
             >
               {/* MEDIA VIEWPORT */}
               <div className="w-full md:w-[72%] h-[400px] md:h-auto md:aspect-[4/3] bg-black relative flex items-center justify-center overflow-hidden">
@@ -131,8 +119,7 @@ export const TravelModal: React.FC<TravelModalProps> = ({
 
               {/* DETAILS + SIDEBAR GALLERY */}
               <div
-                className="w-full md:w-[28%] p-6 md:p-8 flex flex-col justify-between border-t md:border-t-0 md:border-l border-natural-border overflow-y-auto bg-surface-bg"
-                style={{ backgroundColor: 'color-mix(in srgb, var(--surface-bg) 95%, black)' }}
+                className="w-full md:w-[28%] p-6 md:p-8 flex flex-col justify-between border-t md:border-t-0 md:border-l border-natural-border overflow-y-auto bg-surface-bg seasonal-scrollbar"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">

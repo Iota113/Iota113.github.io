@@ -1,3 +1,5 @@
+
+
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TRAVEL_URL } from '../services/supabase';
@@ -291,7 +293,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
             className="w-full max-w-2xl rounded-[var(--radius-ui)] overflow-hidden border border-natural-border bg-surface-bg text-natural-text shadow-ui flex flex-col max-h-[90vh]"
           >
             {/* HEADER */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-natural-border/60 bg-natural-bg/40">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-natural-border/60 shrink-0 bg-surface-bg">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-xs text-accent uppercase tracking-widest">
                   {t(lang, 'City Guesser', '猜城挑战')}
@@ -328,7 +330,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
               </div>
             ) : phase === 'finished' ? (
               /* ── END SCREEN ── */
-              <div className="p-6 md:p-8 overflow-y-auto flex flex-col gap-6">
+              <div className="p-6 md:p-8 overflow-y-auto flex flex-col gap-6 seasonal-scrollbar bg-surface-bg">
                 <div className="text-center">
                   <p className="font-mono text-xs uppercase tracking-widest text-text-muted">
                     {t(lang, 'Final Score', '最终得分')}
@@ -351,7 +353,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
                     return (
                       <div
                         key={i}
-                        className="flex items-center gap-3 px-3 py-2 rounded-md border border-natural-border/50 bg-natural-bg/30 font-mono text-[11px]"
+                        className="flex items-center gap-3 px-3 py-2 rounded-md border border-natural-border/50 bg-natural-bg font-mono text-[11px]"
                       >
                         <span className={`${meta.accent} text-sm w-4 text-center`}>{meta.icon}</span>
                         <img
@@ -391,7 +393,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
               </div>
             ) : (
               /* ── ROUND (guessing / revealed) ── */
-              <div className="flex flex-col overflow-y-auto">
+              <div className="flex flex-col overflow-y-auto seasonal-scrollbar">
                 {/* Image */}
                 <div className="relative w-full aspect-[16/10] bg-black overflow-hidden shrink-0">
                   {currentReady && currentUrl && (
@@ -423,7 +425,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="absolute inset-x-0 bottom-0 z-10 p-4 bg-gradient-to-t from-black/85 to-transparent"
+                      className="absolute inset-x-0 bottom-0 z-10 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
                     >
                       <p className={`font-mono text-xs uppercase tracking-widest ${verdictMeta[lastResult.verdict].accent}`}>
                         {verdictMeta[lastResult.verdict].icon}{' '}
@@ -447,7 +449,7 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
                 </div>
 
                 {/* Interaction area */}
-                <div className="p-5 flex flex-col gap-3">
+                <div className="p-5 flex flex-col gap-3 bg-surface-bg">
                   {phase === 'guessing' ? (
                     <>
                       <p className="font-mono text-[11px] uppercase tracking-widest text-text-muted">
@@ -463,10 +465,10 @@ export const TravelGuessGame: React.FC<TravelGuessGameProps> = ({
                           }}
                           onKeyDown={onInputKeyDown}
                           placeholder={t(lang, 'Type a city…', '输入城市…')}
-                          className="w-full px-4 py-2.5 rounded-[var(--radius-ui)] bg-natural-bg/60 border border-natural-border focus:border-accent outline-none font-mono text-sm text-natural-text placeholder:text-text-muted/60 transition-colors"
+                          className="w-full px-4 py-2.5 rounded-[var(--radius-ui)] bg-natural-bg border border-natural-border focus:border-accent outline-none font-mono text-sm text-natural-text placeholder:text-text-muted/60 transition-colors"
                         />
                         {filtered.length > 0 && (
-                          <div className="mt-2 max-h-44 overflow-y-auto rounded-[var(--radius-ui)] border border-natural-border/60 bg-natural-bg/80 backdrop-blur-sm divide-y divide-natural-border/40">
+                          <div className="mt-2 max-h-44 overflow-y-auto rounded-[var(--radius-ui)] border border-natural-border/60 bg-natural-bg divide-y divide-natural-border/40 seasonal-scrollbar">
                             {filtered.map((o, i) => (
                               <button
                                 key={o.key}
