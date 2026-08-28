@@ -23,7 +23,22 @@ interface ProjectCardProps {
   index: number;
 }
 
-const KNOWN_TAGS = ['javascript', 'python', 'google-apps-script', 'render', 'java', 'gradle'];
+const KNOWN_TAGS = [
+  'javascript',
+  'typescript',
+  'python',
+  'react',
+  'supabase',
+  'neon-postgres',
+  'neon',
+  'postgres',
+  'postgresql',
+  'cloudflare',
+  'google-apps-script',
+  'render',
+  'java',
+  'gradle',
+];
 
 const getTagClassName = (tag: string) => {
   const normalized = tag.toLowerCase().trim().replace(/\s+/g, '-');
